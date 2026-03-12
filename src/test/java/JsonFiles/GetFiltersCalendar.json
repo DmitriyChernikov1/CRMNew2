@@ -1,0 +1,1 @@
+{"dtos":[{"logicalOperator":"","field":"typeEvent","operator":"not eq","value":"График"},{"logicalOperator":"AND","field":"startPlanDate","operator":"greater","value":"2025-01-18 00:00:00.000"},{"logicalOperator":"AND","field":"stopPlanDate","operator":"less","value":"2025-03-14 23:59:59.999"}],"employeeIds":["b69f0af0-43bd-4a37-b3c1-f68c123fde0c"]}

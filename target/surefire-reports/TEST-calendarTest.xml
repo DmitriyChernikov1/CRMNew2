@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="calendarTest" time="15.126" tests="17" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\User\Desktop\CRMNew-main\target\test-classes;C:\Users\User\Desktop\CRMNew-main\target\classes;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\User\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\User\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured\5.1.1\rest-assured-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\User\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\User\.m2\repository\io\rest-assured\json-path\5.1.1\json-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured-common\5.1.1\rest-assured-common-5.1.1.jar;C:\Users\User\.m2\repository\io\rest-assured\xml-path\5.1.1\xml-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit5\2.27.0\allure-junit5-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit-platform\2.27.0\allure-junit-platform-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-rest-assured\2.27.0\allure-rest-assured-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-attachments\2.27.0\allure-attachments-2.27.0.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\User\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.12.21\byte-buddy-1.12.21.jar;C:\Users\User\.m2\repository\org\json\json\20240303\json-20240303.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.13\slf4j-simple-2.0.13.jar;C:\Users\User\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire15984611612193039431\surefirebooter-20260312211319168_3.jar C:\Users\User\AppData\Local\Temp\surefire15984611612193039431 2026-03-12T21-13-19_071-jvmRun1 surefire-20260312211319168_1tmp surefire_0-20260312211319168_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\User\Desktop\CRMNew-main\target\test-classes;C:\Users\User\Desktop\CRMNew-main\target\classes;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\User\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\User\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured\5.1.1\rest-assured-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\User\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\User\.m2\repository\io\rest-assured\json-path\5.1.1\json-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured-common\5.1.1\rest-assured-common-5.1.1.jar;C:\Users\User\.m2\repository\io\rest-assured\xml-path\5.1.1\xml-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit5\2.27.0\allure-junit5-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit-platform\2.27.0\allure-junit-platform-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-rest-assured\2.27.0\allure-rest-assured-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-attachments\2.27.0\allure-attachments-2.27.0.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\User\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.12.21\byte-buddy-1.12.21.jar;C:\Users\User\.m2\repository\org\json\json\20240303\json-20240303.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.13\slf4j-simple-2.0.13.jar;C:\Users\User\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;"/>
+    <property name="allure.results.directory" value="C:\Users\User\Desktop\CRMNew-main\target/allure-results"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\User"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\User\Desktop\CRMNew-main"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire15984611612193039431\surefirebooter-20260312211319168_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
+    <property name="user.name" value="User"/>
+    <property name="stdout.encoding" value="Cp1251"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\User\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\User\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.5"/>
+    <property name="user.dir" value="C:\Users\User\Desktop\CRMNew-main"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\User\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Gradle\bin;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.9.9\bin;C:\Program Files\Java\jdk-21\bin;C:\Users\User\scoop\apps\allure\2.32.0\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\User\scoop\shims;C:\Users\User\AppData\Local\Microsoft\WindowsApps;C:\Users\User\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;;."/>
+    <property name="junit.jupiter.extensions.autodetection.enabled" value="true"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1251"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.5+9-LTS-239"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="getKindEventsWithDefaultPagination" classname="calendarTest" time="0.831"/>
+  <testcase name="getKindEventsWithSortingDesc" classname="calendarTest" time="0.096"/>
+  <testcase name="getKindEventsWithSortingAsc" classname="calendarTest" time="0.072"/>
+  <testcase name="getKindEventsAndValidateStructure" classname="calendarTest" time="0.155"/>
+  <testcase name="createSimpleEvent" classname="calendarTest" time="3.63"/>
+  <testcase name="getTypeEventsWithCustomPagination" classname="calendarTest" time="0.112"/>
+  <testcase name="getCalendarParams" classname="calendarTest" time="0.133"/>
+  <testcase name="getTireFittingEventsWithoutAuth" classname="calendarTest" time="0.707"/>
+  <testcase name="createSchedule" classname="calendarTest" time="3.697"/>
+  <testcase name="getKindEventsWithoutAuth" classname="calendarTest" time="0.049"/>
+  <testcase name="getTireFittingEventsWithDefaultPagination" classname="calendarTest" time="0.29"/>
+  <testcase name="getKindEventsWithCustomPagination" classname="calendarTest" time="0.093"/>
+  <testcase name="deleteSchedule" classname="calendarTest" time="0.1"/>
+  <testcase name="getFilterForCalendar" classname="calendarTest" time="2.531"/>
+  <testcase name="getFilterDutySchedule" classname="calendarTest" time="2.289"/>
+  <testcase name="getTireFittingEventsWithCustomPagination" classname="calendarTest" time="0.11"/>
+  <testcase name="getEvent" classname="calendarTest" time="0.076"/>
+</testsuite>
