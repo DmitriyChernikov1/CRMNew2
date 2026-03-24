@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import utils.TimeGenerated;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

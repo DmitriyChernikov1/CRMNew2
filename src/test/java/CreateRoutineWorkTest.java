@@ -188,8 +188,6 @@ public class CreateRoutineWorkTest {
                     .get(path, id);
 
             if (getResp.statusCode() != 200) {
-                System.err.println("[cleanup] GET " + path + " id=" + id
-                        + " вернул " + getResp.statusCode() + ", пропускаем удаление");
                 return;
             }
 
@@ -198,18 +196,12 @@ public class CreateRoutineWorkTest {
             body.put("isDelete", true);
 
             // 3. Отправляем PUT с обновлённым телом
-            Response putResp = given().spec(authSpec)
+            given().spec(authSpec)
                     .body(body)
                     .when()
                     .put(path, id);
-
-            if (putResp.statusCode() != 200 && putResp.statusCode() != 204) {
-                System.err.println("[cleanup] PUT " + path + " id=" + id
-                        + " вернул " + putResp.statusCode()
-                        + ": " + putResp.body().asString());
-            }
         } catch (Exception e) {
-            System.err.println("[cleanup] Ошибка при удалении " + path + " id=" + id + ": " + e.getMessage());
+            // Suppress exception during cleanup
         }
     }
 

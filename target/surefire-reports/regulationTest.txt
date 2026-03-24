@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
-Test set: regulationTest
+Test set: RegulationTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.426 s <<< FAILURE! -- in regulationTest
-regulationTest.createReglamentJob -- Time elapsed: 0.171 s <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.394 s <<< FAILURE! -- in RegulationTest
+RegulationTest.createReglamentJob -- Time elapsed: 0.188 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <200> but was: <400>
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
-	at regulationTest.createReglamentJob(regulationTest.java:31)
+	at RegulationTest.createReglamentJob(RegulationTest.java:31)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)

@@ -5,8 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-
 import static org.junit.jupiter.api.Assertions.*;
+
 @ExtendWith(BaseTest.class)
 public class GroupOfResponsibleTest {
     String validUuid = "3909df72-e6ee-49fa-a117-793b6b4789cc";
@@ -30,14 +30,12 @@ public class GroupOfResponsibleTest {
 
         String responseBody = getUserGroup.getBody().asString();
         assertNotNull(responseBody);
-
     }
 
     @Test
     @Description("Обновление группы сотрудников по заявкам")
     @DisplayName("Успешное обновление группы сотрудников по заявкам")
     public void updateUserGroupApplication_Success() {
-
 
         // Формируем JSON-тело с подстановкой переменной time в поле "name"
         String requestBody = "{\"createdBy\": \"Черников Дмитрий Витальевич\", " +
@@ -67,12 +65,10 @@ public class GroupOfResponsibleTest {
         assertNotNull(responseBody);
     }
 
-
     @Test
     @Description("Создание и удаление группы сотрудников по заявкам")
     @DisplayName("Успешное удаление группы сотрудников по заявкам")
     public void deleteUserGroupApplication_Success() {
-
 
         String validUuid = "123e4567-e89b-12d3-a456-426614174000"; // Заменить на реальный UUID
 
@@ -90,7 +86,6 @@ public class GroupOfResponsibleTest {
     @Description("Получение группы сотрудников по заявкам - неавторизованный доступ")
     @DisplayName("Ошибка авторизации при получении группы")
     public void getUserGroupApplication_Unauthorized() {
-
 
         Response getUserGroup = RestAssured
                 .given()
@@ -310,7 +305,6 @@ public class GroupOfResponsibleTest {
 
         int statusCode = createUserGroup.getStatusCode();
         assertEquals(200, statusCode);
-        createUserGroup.prettyPrint();
 
         String responseBody = createUserGroup.getBody().asString();
         assertNotNull(responseBody);
@@ -319,7 +313,6 @@ public class GroupOfResponsibleTest {
         String id = createUserGroup.jsonPath().getString("id");
         assertNotNull("ID созданной группы не должен быть null", id);
 
-
         // Используем полученный id для удаления
         Response deleteUserGroup = RestAssured
                 .given()
@@ -327,8 +320,7 @@ public class GroupOfResponsibleTest {
                 .delete("http://172.20.207.16:9000/client-relations/user-group-application/" + id)
                 .andReturn();
 
-        int deleteStatusCode = deleteUserGroup.getStatusCode(); // исправлено: убрал дублирование переменной
+        int deleteStatusCode = deleteUserGroup.getStatusCode();
         assertEquals(201, deleteStatusCode);
     }
-
 }

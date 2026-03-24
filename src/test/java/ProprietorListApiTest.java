@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
+
 @ExtendWith(BaseTest.class)
 public class ProprietorListApiTest {
     AuthTokenTest authService = new AuthTokenTest();
@@ -24,11 +25,11 @@ public class ProprietorListApiTest {
 
         return id;
     }
+
     @Test
     @Description("Получение списка собственников с пагинацией")
     @DisplayName("Успешное получение списка собственников")
     public void getProprietorList_Success() {
-
 
         Response getProprietorList = given()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
@@ -66,7 +67,6 @@ public class ProprietorListApiTest {
     @DisplayName("Успешное получение списка с сортировкой")
     public void getProprietorList_WithSorting() {
 
-
         Response getProprietorList = given()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .queryParam("sort", "name")
@@ -97,7 +97,6 @@ public class ProprietorListApiTest {
         String responseBody = getProprietorList.getBody().asString();
         assertNotNull(responseBody);
     }
-
 
     @Test
     @Description("Получение списка собственников с полными параметрами")
@@ -136,7 +135,6 @@ public class ProprietorListApiTest {
     @Description("Получение списка собственников с некорректными параметрами")
     @DisplayName("Ошибка при некорректных параметрах запроса")
     public void getProprietorList_InvalidParams() {
-
 
         Response getProprietorList = given()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
@@ -220,8 +218,6 @@ public class ProprietorListApiTest {
         // Проверка что используется страница по умолчанию (0)
         Integer number = getProprietorList.jsonPath().getInt("number");
         assertEquals(0, number);
-        //
-
     }
 
     @Test
@@ -251,6 +247,7 @@ public class ProprietorListApiTest {
             }
         }
     }
+
     @Test
     @Description("Получение собственника по UUID")
     @DisplayName("Успешное получение собственника")
@@ -305,7 +302,6 @@ public class ProprietorListApiTest {
     @Description("Получение несуществующего собственника")
     @DisplayName("Ошибка при запросе несуществующего собственника")
     public void getProprietor_NotFound() {
-
 
         String nonExistentUuid = "00000000-0000-0000-0000-000000000000";
 
@@ -378,7 +374,6 @@ public class ProprietorListApiTest {
         int statusCode = getProprietor.getStatusCode();
         assertEquals(200, statusCode);
 
-
         String responseUuid = getProprietor.jsonPath().getString("id");
 
         // Проверка что UUID соответствует формату
@@ -386,13 +381,12 @@ public class ProprietorListApiTest {
                 "UUID format is invalid");
 
         assertEquals(validUuid, responseUuid);
-
     }
+
     @Test
     @Description("Создание новой записи собственника с использованием DTO")
     @DisplayName("Успешное создание и удаление собственника с проверкой заголовков")
     public void saveAndDeleteProprietorDto_Success() {
-
 
         String clientId = "56fe8853-9836-4586-9a09-3dfbd8d71d09";
         String objectUk = "52045561-2361-495c-93d9-b9f17f50b833";
@@ -415,7 +409,7 @@ public class ProprietorListApiTest {
 
         // Проверяем статус код
         int statusCode = saveProprietorResponse.getStatusCode();
-        assertEquals(200, statusCode, "Expected status code 201 Created");
+        assertEquals(200, statusCode, "Expected status code 200");
 
         // Проверка заголовков ответа
         String contentType = saveProprietorResponse.getHeader("Content-Type");
@@ -426,9 +420,8 @@ public class ProprietorListApiTest {
         String responseBody = saveProprietorResponse.getBody().asString();
         assertNotNull(responseBody, "Response body should not be null");
         assertFalse(responseBody.isEmpty(), "Response body should not be empty");
-        saveProprietorResponse.prettyPrint();
 
-        String id =saveProprietorResponse.jsonPath().getString("id");
+        String id = saveProprietorResponse.jsonPath().getString("id");
 
         String deleteBody = String.format(
                 "{\"id\":\"%s\",\"clientId\":\"%s\",\"objectUk\":\"%s\",\"typeContact\":\"Собственник\",\"isDelete\":true,\"typeOwnership\":\"совместная\"}",
@@ -441,9 +434,6 @@ public class ProprietorListApiTest {
                 .put("http://172.20.207.16/api/client-relations/tasks/proprietor/710949be-af50-4569-994a-d62724027642")
                 .andReturn();
         int statusCodes = deleteProprietor.getStatusCode();
-        assertEquals(200,statusCodes);
-
+        assertEquals(200, statusCodes);
     }
-
-
 }

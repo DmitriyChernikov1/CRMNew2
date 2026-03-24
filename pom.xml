@@ -10,8 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <aspectj.version>1.9.22</aspectj.version>
     </properties>
 
@@ -24,13 +24,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit 4 (оставлен на случай если есть старые тесты) -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
+
 
         <!-- WebSocket -->
         <dependency>
@@ -79,6 +73,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>2.27.2</version>
+            <scope>test</scope>
+        </dependency>
         <!-- JSON -->
         <dependency>
             <groupId>org.json</groupId>

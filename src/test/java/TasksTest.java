@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.qameta.allure.Description;
 
 import io.restassured.RestAssured;
@@ -10,12 +12,17 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.JsonUtils;
+import utils.TestDataJson;
 
 import java.io.File;
 import java.net.URI;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.*;
 
 // ИСПРАВЛЕНО: имя класса начинается с заглавной буквы (конвенция Java)
@@ -39,27 +46,124 @@ public class TasksTest {
     public void createTaskWithApplication() {
         File jsonFile = new File("src/test/java/JsonFiles/tasks.application.json");
 
-        Response createTask = RestAssured
-                .given()
-                .body(jsonFile)
-                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
-                // ИСПРАВЛЕНО: baseURI задан в @BeforeAll, поэтому указываем только путь
-                .post("/api/client-relations/related-collections/applicationFull/addTask/b48c9319-888e-462f-a62c-869cc4b046ef")
-                .andReturn();
+            Response createTask = given()
+                    .body(jsonFile)
+                    .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                    // ИСПРАВЛЕНО: baseURI задан в @BeforeAll, поэтому указываем только путь
+                    .post("/api/client-relations/related-collections/applicationFull/addTask/fcaed87e-c8d2-4158-9a41-280fd5c71fbc")
+                    .andReturn();
 
         createTask.prettyPrint();
         int statusCode = createTask.getStatusCode();
         assertEquals(200, statusCode);
     }
+    @Test
+    @Description("проверка отображения заявок")
+    @DisplayName("Проверка отображения активных заявок")
+    public void displayOfRequests(){
+        String body = "[]";
+        Response display = given()
+                .body(body)
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .post("/api/client-relations/application/filtering?sort=number,desc&page=0&size=50&showArchive=false")
+                .andReturn();
+        int statusCode = display.getStatusCode();
+        assertEquals(200, statusCode);
+        int test = display.jsonPath().getInt("numberOfElements");
+        assertEquals(50, test);
 
+        List<Object> isDeleteValues = display.jsonPath().getList("content.isDelete");
+        for (int i = 0; i < isDeleteValues.size(); i++) {
+            Object value = isDeleteValues.get(i);
+            assertTrue(value == null || value.equals(false),
+                    "isDelete должен быть null или false для активных заявок, индекс " + i +
+                            ", получено: " + value);
+        }
+
+
+    }
+    @Test
+    @Description("проверка отображения не активных заявок")
+    @DisplayName("Проверка отображения не активных заявок")
+    public void displayOfDeleteRequests(){
+        String body = "[]";
+        Response display = given()
+                .body(body)
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .post("/api/client-relations/application/filtering?sort=number,desc&page=0&size=50&showArchive=true")
+                .andReturn();
+        int statusCode = display.getStatusCode();
+        assertEquals(200, statusCode);
+        int test = display.jsonPath().getInt("numberOfElements");
+        assertEquals(50, test);
+
+        List<Object> isDeleteValues = display.jsonPath().getList("content.isDelete");
+        for (int i = 0; i < isDeleteValues.size(); i++) {
+            Object value = isDeleteValues.get(i);
+            assertTrue(value.equals(true),
+                    "isDelete должен быть null или false для активных заявок, индекс " + i +
+                            ", получено: " + value);
+        }
+
+
+    }
+    @Test
+    @Description("проверка отображения активных задач")
+    @DisplayName("Проверка отображения активных задач")
+    public void displayOfTasks(){
+        String body = "[]";
+        Response display = given()
+                .body(body)
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .post("/api/client-relations/tasks/filtering?sort=createdDate,desc&page=0&size=50&showArchive=false")
+                .andReturn();
+        int statusCode = display.getStatusCode();
+        assertEquals(200, statusCode);
+        int test = display.jsonPath().getInt("numberOfElements");
+        assertEquals(50, test);
+
+        List<Object> isDeleteValues = display.jsonPath().getList("content.isDelete");
+        for (int i = 0; i < isDeleteValues.size(); i++) {
+            Object value = isDeleteValues.get(i);
+            assertTrue(value == null || value.equals(false),
+                    "isDelete должен быть null или false для активных заявок, индекс " + i +
+                            ", получено: " + value);
+        }
+
+
+    }
+    @Test
+    @Description("проверка отображения удаленных задач")
+    @DisplayName("Проверка отображения удаленных задач")
+    public void displayOfDeleteTask(){
+        String body = "[]";
+        Response display = given()
+                .body(body)
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .post("/api/client-relations/tasks/filtering?sort=createdDate,desc&page=0&size=50&showArchive=true")
+                .andReturn();
+        int statusCode = display.getStatusCode();
+        assertEquals(200, statusCode);
+        int test = display.jsonPath().getInt("numberOfElements");
+        assertEquals(50, test);
+
+        List<Object> isDeleteValues = display.jsonPath().getList("content.isDelete");
+        for (int i = 0; i < isDeleteValues.size(); i++) {
+            Object value = isDeleteValues.get(i);
+            assertTrue(value.equals(true),
+                    "isDelete должен быть null или false для активных заявок, индекс " + i +
+                            ", получено: " + value);
+        }
+
+
+    }
     @Test
     @Description("Создание новой заявки")
     @DisplayName("Создание заявки")
     public void createApplication() {
         String body = TestDataJson.application();
 
-        Response createApplication = RestAssured
-                .given()
+        Response createApplication = given()
                 .body(body)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/client-relations/application-full")
@@ -78,8 +182,7 @@ public class TasksTest {
     public void createTask() {
         File jsonFile = new File("src/test/java/JsonFiles/createTask.json");
 
-        Response createTask = RestAssured
-                .given()
+        Response createTask = given()
                 .body(jsonFile)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/client-relations/tasks-full")
@@ -100,8 +203,7 @@ public class TasksTest {
 
         String body = TestDataJson.taskEmergency();
 
-        Response createTask = RestAssured
-                .given()
+        Response createTask = given()
                 .log().all()
                 .body(body)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
@@ -121,8 +223,7 @@ public class TasksTest {
     public void createTaskPaid() {
         String body = TestDataJson.taskPay();
 
-        Response createTask = RestAssured
-                .given()
+        Response createTask = given()
                 .body(body)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/client-relations/tasks-full")
@@ -136,8 +237,7 @@ public class TasksTest {
     @Description("Получение информации по заявке по ID")
     @DisplayName("Получение информации по заявке")
     public void getInfoApplication() {
-        Response getinfo = RestAssured
-                .given()
+        Response getinfo = given()
                 .log().all()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 // ИСПРАВЛЕНО: добавлен /api — URL теперь единообразен с остальными тестами
@@ -152,8 +252,7 @@ public class TasksTest {
     @Description("Получение списка заявок с пагинацией и сортировкой")
     @DisplayName("Получение списка заявок")
     public void getInfoGroupApplication() {
-        Response getInfoGroupApplication = RestAssured
-                .given()
+        Response getInfoGroupApplication = given()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 // ИСПРАВЛЕНО: добавлен /api — URL теперь единообразен с остальными тестами
                 .get("/api/client-relations/user-group-application?page=1&size=20&sort=name")
@@ -168,12 +267,11 @@ public class TasksTest {
 
     @Test
     @Description("Создание заявки, проверка ID и последующее удаление с верификацией")
-    @DisplayName("Создание и удаление заявки")
+    @DisplayName("Создание и удаление заявки из БД")
     public void createAndDeleteApplication() {
         String body = TestDataJson.application();
 
-        Response createApplication = RestAssured
-                .given()
+        Response createApplication = given()
                 .body(body)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/client-relations/application-full")
@@ -188,8 +286,7 @@ public class TasksTest {
         assertFalse(applicationId.isEmpty(), "ID заявки не должен быть пустым");
 
         // Удаление заявки
-        Response deleteResponse = RestAssured
-                .given()
+        Response deleteResponse = given()
                 .headers("Authorization", "Bearer " + accessToken)
                 .delete("/api/client-relations/application-full/" + applicationId)
                 .andReturn();
@@ -198,8 +295,7 @@ public class TasksTest {
         assertEquals(201, deleteStatusCode, "Заявка должна быть успешно удалена");
 
         // Верификация удаления - проверяем, что заявка больше не доступна
-        Response getResponse = RestAssured
-                .given()
+        Response getResponse = given()
                 .headers("Authorization", "Bearer " + accessToken)
                 .get("/api/client-relations/application-full/" + applicationId)
                 .andReturn();
@@ -214,12 +310,11 @@ public class TasksTest {
 
     @Test
     @Description("Создание задачи, проверка ID и последующее удаление с верификацией")
-    @DisplayName("Создание и удаление задачи")
+    @DisplayName("Создание и удаление задачи из БД")
     public void createAndDeleteTask() {
         File jsonFile = new File("src/test/java/JsonFiles/createTask.json");
 
-        Response createTask = RestAssured
-                .given()
+        Response createTask = given()
                 .body(jsonFile)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/client-relations/tasks-full")
@@ -238,8 +333,7 @@ public class TasksTest {
         assertFalse(taskId.isEmpty(), "ID задачи не должен быть пустым");
         System.out.println("Создана задача с ID: " + taskId);
 
-        Response deleteResponse = RestAssured
-                .given()
+        Response deleteResponse = given()
                 .headers("Authorization", "Bearer " + accessToken)
                 .delete("/api/client-relations/tasks-full/" + taskId)
                 .andReturn();
@@ -249,8 +343,7 @@ public class TasksTest {
         assertEquals(201, deleteStatusCode, "Задача должна быть успешно удалена");
 
         // ИСПРАВЛЕНО: добавлена реальная проверка — задача не должна быть доступна после удаления
-        Response getResponse = RestAssured
-                .given()
+        Response getResponse = given()
                 .headers("Authorization", "Bearer " + accessToken)
                 .get("/api/client-relations/tasks-full/" + taskId)
                 .andReturn();
@@ -265,8 +358,7 @@ public class TasksTest {
     public void editTask() {
         File jsonFile = new File("src/test/java/JsonFiles/editTask.json");
 
-        Response editTask = RestAssured
-                .given()
+        Response editTask = given()
                 .body(jsonFile)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .put("/api/client-relations/tasks-full/0e8da8d8-a103-45fa-9e84-3abf2b812cc3")
@@ -286,8 +378,7 @@ public class TasksTest {
     public void editApplication() {
         String body = TestDataJson.editAplication();
 
-        Response editApplication = RestAssured
-                .given()
+        Response editApplication = given()
                 .body(body)
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .put("/api/client-relations/application-full/602de811-808b-4dd0-bf1d-8b83aff042cc")
@@ -303,8 +394,7 @@ public class TasksTest {
     @Description("Получение информации по задаче и проверка формата даты создания")
     @DisplayName("Получение информации по задаче")
     public void getInfoTask() {
-        Response getinfo = RestAssured
-                .given()
+        Response getinfo = given()
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .get("/api/client-relations/tasks-full/6ebd3e1a-b24a-4042-a43b-038c6a0ad20b")
                 .andReturn();
@@ -325,8 +415,7 @@ public class TasksTest {
     @Description("Отправка сообщения во внутренний чат задачи")
     @DisplayName("Отправка сообщения во внутренний чат")
     public void sendMessageInterior() {
-        Response sendMessage = RestAssured
-                .given()
+        Response sendMessage = given()
                 .body("{\"link\":\"chat\",\"text\":\"автотест\",\"employeeId\":\"b69f0af0-43bd-4a37-b3c1-f68c123fde0c\",\"module\":\"Задача\",\"objectId\":\"fe66614f-4407-48c9-bda5-079490919c0a\",\"documentIds\":[]}")
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/message/chat/create")
@@ -414,8 +503,7 @@ public class TasksTest {
     private void sendMessageToChat(String accessToken, String messageText) {
         System.out.println("📤 Отправляем сообщение в чат...");
 
-        Response sendMessage = RestAssured
-                .given()
+        Response sendMessage = given()
                 .body("{\"link\":\"chat\",\"text\":\"" + messageText + "\",\"employeeId\":\"b69f0af0-43bd-4a37-b3c1-f68c123fde0c\",\"module\":\"Задача\",\"objectId\":\"fe66614f-4407-48c9-bda5-079490919c0a\",\"documentIds\":[]}")
                 .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
                 .post("/api/message/chat/create")
@@ -425,6 +513,72 @@ public class TasksTest {
         assertEquals(200, statusCode);
         System.out.println("✅ Сообщение отправлено, статус: " + statusCode);
     }
+    private static final String APPLICATION_ID = "3547a63a-4598-4da4-a311-2c32e2f95c22";
+    private static final String APPLICATION_URL = "/api/client-relations/application-full/" + APPLICATION_ID;
 
+    @Test
+    @Description("Получение информации по заявке по ID")
+    @DisplayName("Получение информации по заявке№2")
+    public void getApplication() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("id", equalTo(APPLICATION_ID));
+    }
+
+    @Test
+    @Description("Удаление заявки")
+    @DisplayName("Удаление заявки")
+    public void deleteApplication() throws Exception {
+        // Получаем текущее тело
+        String requestBody = given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .extract()
+                .body().asString();
+
+        // Меняем isDelete на true и отправляем PUT
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .body(JsonUtils.changeField(requestBody, "isDelete", true))
+                .when()
+                .put(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("isDelete", equalTo(true))
+                .body("id", equalTo(APPLICATION_ID));
+    }
+
+    @Test
+    @Description("Восстановление заявки")
+    @DisplayName("Восстановление заявки")
+    public void restoreApplication() throws Exception {
+        // Получаем текущее тело
+        String requestBody = given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .extract()
+                .body().asString();
+
+        // Меняем isDelete на false и отправляем PUT
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .body(JsonUtils.changeField(requestBody, "isDelete", false))
+                .when()
+                .put(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("isDelete", equalTo(false))
+                .body("id", equalTo(APPLICATION_ID));
+    }
 
 }
