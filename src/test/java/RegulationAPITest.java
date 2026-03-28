@@ -385,7 +385,7 @@ public class RegulationAPITest {
                 .extract()
                 .response();
 
-        Assertions.assertEquals("no-cache, no-store, max-age=0, must-revalidate",
+        Assertions.assertEquals("private, must-revalidate, max-age=0",
                 response.header("Cache-Control"));
         Assertions.assertEquals("nosniff", response.header("X-Content-Type-Options"));
         Assertions.assertEquals("DENY", response.header("X-Frame-Options"));

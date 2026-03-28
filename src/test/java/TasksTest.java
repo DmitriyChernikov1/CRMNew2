@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.qameta.allure.Description;
 
@@ -6,6 +7,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,12 +19,14 @@ import utils.TestDataJson;
 
 import java.io.File;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.*;
 
 // ИСПРАВЛЕНО: имя класса начинается с заглавной буквы (конвенция Java)
@@ -580,5 +584,160 @@ public class TasksTest {
                 .body("isDelete", equalTo(false))
                 .body("id", equalTo(APPLICATION_ID));
     }
+    @Test
+    @Description("Открытие вкладки с документами в заявке")
+    @DisplayName("Открытие вкладки с документами в заявке. Пустой и с документами")
+    public void documentsApplication(){
+        // Общие параметры для обоих запросов
+        Map<String, Object> baseQueryParams = new HashMap<>();
+        baseQueryParams.put("sort", "attachment,asc");
+        baseQueryParams.put("page", 0);
+        baseQueryParams.put("size", 10);
+        baseQueryParams.put("showArchive", false);
 
+        //без файла
+        Map<String, Object> emptyQueryParams = new HashMap<>(baseQueryParams);
+        emptyQueryParams.put("uuid", "d89a1ffc-fbf3-4ccc-b117-c1199c4fcbf9");
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .queryParams(emptyQueryParams)
+                .when()
+                .get("/api/client-relations/link-document/documents")
+                .then()
+                .statusCode(200)
+                .body("empty", equalTo(true));
+
+        // с файлом
+        Map<String, Object> withFileQueryParams = new HashMap<>(baseQueryParams);
+        withFileQueryParams.put("uuid", "4ec42a2d-1304-4e76-a227-3cd51d25e005");
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .queryParams(withFileQueryParams)
+                .when()
+                .get("/api/client-relations/link-document/documents")
+                .then()
+                .statusCode(200)
+                .body("empty", equalTo(false));
+    }
+    @Test
+    @Description("Открытие вкладки с документами в задачи")
+    @DisplayName("Открытие вкладки с документами в задачи. Пустой и с документами")
+    public void documentsTask(){
+        // Общие параметры для обоих запросов
+        Map<String, Object> baseQueryParams = new HashMap<>();
+        baseQueryParams.put("sort", "attachment,asc");
+        baseQueryParams.put("page", 0);
+        baseQueryParams.put("size", 10);
+        baseQueryParams.put("showArchive", false);
+
+        //без файла
+        Map<String, Object> emptyQueryParams = new HashMap<>(baseQueryParams);
+        emptyQueryParams.put("uuid", "e76d0949-992b-49c1-85b2-7087bfb13aa6");
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .queryParams(emptyQueryParams)
+                .when()
+                .get("/api/client-relations/link-document/documents")
+                .then()
+                .statusCode(200)
+                .body("empty", equalTo(true));
+
+        // с файлом
+        Map<String, Object> withFileQueryParams = new HashMap<>(baseQueryParams);
+        withFileQueryParams.put("uuid", "c1d0f7c9-0981-44fa-aa72-bdb85ee052d9");
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .queryParams(withFileQueryParams)
+                .when()
+                .get("/api/client-relations/link-document/documents")
+                .then()
+                .statusCode(200)
+                .body("empty", equalTo(false));
+    }
+    private static final String TASK_ID = "0e4431dc-0e75-4dda-a9cc-d170d2cd261e";
+    private static final String TASK_URL = "/api/client-relations/application-full/" + APPLICATION_ID;
+
+    @Test
+    @Description("Получение информации по задаче по ID")
+    @DisplayName("Получение информации по задаче№2")
+    public void getTask() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("id", equalTo(APPLICATION_ID));
+    }
+
+    @Test
+    @Description("Удаление задачи")
+    @DisplayName("Удаление задачи")
+    public void deleteTask() throws Exception {
+        // Получаем текущее тело
+        String requestBody = given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .extract()
+                .body().asString();
+
+        // Меняем isDelete на true и отправляем PUT
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .body(JsonUtils.changeField(requestBody, "isDelete", true))
+                .when()
+                .put(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("isDelete", equalTo(true))
+                .body("id", equalTo(APPLICATION_ID));
+    }
+
+    @Test
+    @Description("Восстановление задачи")
+    @DisplayName("Восстановление задачи")
+    public void restoreTask() throws Exception {
+        // Получаем текущее тело
+        String requestBody = given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .extract()
+                .body().asString();
+
+        // Меняем isDelete на false и отправляем PUT
+        given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .body(JsonUtils.changeField(requestBody, "isDelete", false))
+                .when()
+                .put(APPLICATION_URL)
+                .then()
+                .statusCode(200)
+                .body("isDelete", equalTo(false))
+                .body("id", equalTo(APPLICATION_ID));
+    }
+    @Test
+    @Description("Просмотр файла в заявке/задаче")
+    @DisplayName("Просмотр файла в заявке/задаче")
+    public void viewingDocumentOnTask(){
+        Response viewing = given()
+                .headers("Authorization", "Bearer " + accessToken, "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("name", "2026.03.25_10_29_41_%D0%A7%D0%B5%D1%80%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%202.pdf")
+                .when()
+                .get("/api/document/attachment/byte-by-name")
+                .then()
+                .statusCode(200)
+                .extract().response();
+        Assertions.assertNotNull(viewing.getBody());
+
+    }
 }

@@ -1,4 +1,4 @@
-version:  "3"
+version: "3"
 
 services:
   test_runner:
@@ -7,3 +7,21 @@ services:
     container_name: java_runner_works
     volumes:
       - .:/test/
+      - ./allure-results:/test/target/allure-results
+      - ./allure-report:/test/target/site/allure-maven-plugin
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./allure-results:/allure-results
+      - /run/desktop/mnt/host/c/Users/User/Desktop/CRMNew-main:/project
+
+volumes:
+  jenkins_home:

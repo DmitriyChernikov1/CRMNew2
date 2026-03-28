@@ -1,8 +1,10 @@
 Administration.class
 AuthTokenTest.class
 CalendarTest.class
+utils/TimeGenerated.class
 PriorityTaskApiTest.class
 ProprietorListApiTest.class
+utils/TestDataJson.class
 TableSettingTest.class
 RegulationAPITest.class
 StatusTasksTest.class
@@ -11,10 +13,8 @@ CreateRoutineWorkTest.class
 TasksTest.class
 NewTest.class
 AuthTest.class
-RegulationTest.class
-TestDataJson.class
 GroupOfResponsibleTest.class
-TimeGenerated.class
 ContactsTest.class
+utils/JsonUtils.class
 ReservationTest.class
 BaseTest.class
