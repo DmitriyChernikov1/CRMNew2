@@ -1,150 +1,412 @@
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import utils.JsonUtils;
 import utils.TestDataJson;
-import static org.hamcrest.Matchers.*;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class AdministrationTest {
+
     private static String accessToken;
-
-    private static final String BASE_URL = "http://172.20.207.16";
-
+    private static String createdUserId;
+    private static String createdUserLogin;
 
     @BeforeAll
-    static void setUp() {
-        RestAssured.baseURI = BASE_URL;
+    static void setup() {
+        RestAssured.baseURI = "http://172.20.207.16";
         accessToken = new AuthTokenTest().getAccessToken();
     }
-    // Базовый запрос с авторизацией — baseUri берётся из RestAssured.baseURI выше
-    private RequestSpecification authRequest() {
-        return given()
-                .baseUri(BASE_URL)
-                .header("Content-Type", "application/json; charset=UTF-8")
-                .header("accept", "application/json")
-                .header("Accept-Language", "ru,ru-RU;q=0.9,en-US;q=0.8,en;q=0.7")
-                .header("Authorization", "Bearer " + accessToken);
-    }
+
+    // =====================================================================
+    // СПРАВОЧНИКИ — РОЛИ
+    // =====================================================================
+
     @Test
-    @Description("putUsers")
-    @DisplayName("Изменение пользователя")
-    public void putUser() {
-
-        String body = TestDataJson.bodyForUser;
-        Response putUser = authRequest()
-                .given()
-                .body(body)
-                .put("/api/users/user_employee/c1934b45-4752-4c4d-8d52-86c749bfacba")
-                .andReturn();
-
-        int statusCode = putUser.getStatusCode();
-        assertEquals(200, statusCode);
-        putUser.prettyPrint();
-    }
-    @Test
-    @Description("CreateUsers")
-    @DisplayName("Создание и удаление пользователя")
-    public void createUser() {
-
-        // Шаг 1 — создание пользователя
-        String createBody = TestDataJson.CreateUser;
-
-        Response createResponse = authRequest()
-                .body(createBody)
-                .post("/api/users/user_employee")
-                .andReturn();
-
-        createResponse.prettyPrint();
-        assertEquals(200, createResponse.getStatusCode());
-
-        String userId     = createResponse.jsonPath().getString("userId");
-        String employeeId = createResponse.jsonPath().getString("employeeId");
-        String userLogin  = createResponse.jsonPath().getString("userLogin");
-        String userName   = createResponse.jsonPath().getString("userName");
-
-        System.out.println("Создан пользователь с id: " + userId);
-        assertNotNull(userId, "userId не должен быть null");
-
-        // Шаг 2 — строим тело PUT явно с userIsDelete: true
-        String editBody = "{"
-                + "\"userId\":\"" + userId + "\","
-                + "\"employeeId\":\"" + employeeId + "\","
-                + "\"employeeUserId\":\"" + userId + "\","
-                + "\"userName\":\"" + userName + "\","
-                + "\"userLogin\":\"" + userLogin + "\","
-                + "\"userEmail\":\"" + userLogin + "\","
-                + "\"userIsDelete\":true,"           // <-- ключевое поле
-                + "\"userIsNew\":true,"
-                + "\"userIsActive\":true,"
-                + "\"userIsContractor\":null,"
-                + "\"userIsLdap\":null,"
-                + "\"userStartDate\":\"2026-03-21\","
-                + "\"userStopDate\":\"2026-06-21\","
-                + "\"userFinishDate\":null,"
-                + "\"employeeFirstName\":\"автотестович\","
-                + "\"employeeLastName\":\"автотест\","
-                + "\"employeeMidName\":null,"
-                + "\"employeePhone\":null,"
-                + "\"employeeEmail\":\"" + userLogin + "\","
-                + "\"employeeIsSharedCalendar\":null,"
-                + "\"employeeIsOutlookSync\":null,"
-                + "\"userRole\":{"
-                + "\"id\":\"cced4585-e358-40bf-8614-01b0bd39439b\","
-                + "\"name\":\"Администратор\","
-                + "\"groupAccesses\":[{"
-                + "\"id\":\"140a0210-d1d1-439e-b3a4-0ee5be6d29d2\","
-                + "\"name\":\"Администратор - полный доступ\""
-                + "}]}"
-                + "}";
-
-        Response putResponse = authRequest()
-                .body(editBody)
-                .put("/api/users/user_employee/" + userId)
-                .andReturn();
-
-        assertEquals(200, putResponse.getStatusCode());
-
-        // Проверяем userIsDelete = true в ответе
-        String isDelete = putResponse.jsonPath().getString("userIsDelete");
-        assertEquals("true", isDelete, "userIsDelete должен быть true");
-    }
-    /*
-    @Test
-    @Description("проверка фильтра")
-    @DisplayName("проверка фильтра")
-    public void tableSetting(){
-
-        Map <String,String> body = new HashMap<>();
-        body.put("value","Сопин");
-        body.put("field","name");
-        body.put("operator","like");
-        body.put("logicalOperator","and");
-        Response table =
-                authRequest()
-                .body(body)
+    @Order(1)
+    @Description("Получение списка групп доступа")
+    @DisplayName("Получение групп доступа")
+    public void getGroupAccess() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
                 .when()
-                .post("/api/users/user/flat/filtering?sort=name,asc&page=0&size=10&showArchive=false")
-                        .then()
-                        .log().all()
-                        .statusCode(200)
-                        .body("$",not(empty()))
-                        .extract().response();
-    }*/
-    @Test
-    @Description("получение настроек")
-    @DisplayName("получение настроек")
-    public void getSettingsTable(){
-        Response getSettings = authRequest()
-                .get("http://172.20.207.16/api/users/settings-table/settings?userId=01bb66cc-6456-41ce-9fb7-ad38c25fea43&tableName=user")
+                .get("/api/users/groupAccess")
                 .then()
                 .statusCode(200)
-                .body("$",not(empty()))
-                .extract().response();
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(2)
+    @Description("Получение списка ролей")
+    @DisplayName("Получение ролей")
+    public void getRoles() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get("/api/users/role")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue())
+                .body("content[0].groupAccesses", notNullValue());
+    }
+
+    @Test
+    @Order(3)
+    @Description("Поиск ролей через автокомплит без фильтра")
+    @DisplayName("Автокомплит ролей — пустой запрос")
+    public void autocompleteRolesEmpty() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "")
+                .when()
+                .get("/api/users/autocomplete/role")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(4)
+    @Description("Поиск ролей через автокомплит с фильтром по букве А")
+    @DisplayName("Автокомплит ролей — фильтр по букве")
+    public void autocompleteRolesWithFilter() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "а")
+                .when()
+                .get("/api/users/autocomplete/role")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content.name", everyItem(containsStringIgnoringCase("а")));
+    }
+
+    // =====================================================================
+    // АВТОКОМПЛИТ — ОРГАНИЗАЦИИ
+    // =====================================================================
+
+    @Test
+    @Order(5)
+    @Description("Поиск организаций через автокомплит без фильтра")
+    @DisplayName("Автокомплит организаций — пустой запрос")
+    public void autocompleteOrganizationsEmpty() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "")
+                .when()
+                .get("/api/users/autocomplete/organization")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(6)
+    @Description("Поиск организаций через автокомплит с фильтром — возвращает только совпадения")
+    @DisplayName("Автокомплит организаций — фильтр по названию")
+    public void autocompleteOrganizationsWithFilter() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "1")
+                .when()
+                .get("/api/users/autocomplete/organization")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].name", containsString("1"));
+    }
+
+    // =====================================================================
+    // АВТОКОМПЛИТ — ОТДЕЛЫ
+    // =====================================================================
+
+    @Test
+    @Order(7)
+    @Description("Поиск отделов через автокомплит без фильтра")
+    @DisplayName("Автокомплит отделов — пустой запрос")
+    public void autocompleteDepartmentsEmpty() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "")
+                .when()
+                .get("/api/users/autocomplete/department")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(8)
+    @Description("Поиск отделов через автокомплит с фильтром — возвращает только совпадения")
+    @DisplayName("Автокомплит отделов — фильтр по названию")
+    public void autocompleteDepartmentsWithFilter() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "1")
+                .when()
+                .get("/api/users/autocomplete/department")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content.name", everyItem(containsString("1")));
+    }
+
+    // =====================================================================
+    // АВТОКОМПЛИТ — ДОЛЖНОСТИ
+    // =====================================================================
+
+    @Test
+    @Order(9)
+    @Description("Поиск должностей через автокомплит без фильтра")
+    @DisplayName("Автокомплит должностей — пустой запрос")
+    public void autocompletePostsEmpty() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "")
+                .when()
+                .get("/api/users/autocomplete/post")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(10)
+    @Description("Поиск должностей через автокомплит с фильтром — возвращает только совпадения")
+    @DisplayName("Автокомплит должностей — фильтр по названию")
+    public void autocompletePostsWithFilter() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "1")
+                .when()
+                .get("/api/users/autocomplete/post")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content.name", everyItem(containsString("1")));
+    }
+
+    // =====================================================================
+    // АВТОКОМПЛИТ — СОТРУДНИКИ
+    // =====================================================================
+
+    @Test
+    @Order(11)
+    @Description("Поиск сотрудников через автокомплит без фильтра")
+    @DisplayName("Автокомплит сотрудников — пустой запрос")
+    public void autocompleteEmployeesEmpty() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "")
+                .when()
+                .get("/api/users/autocomplete/employee")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].id", notNullValue())
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(12)
+    @Description("Поиск сотрудников через автокомплит с фильтром по букве — возвращает только совпадения")
+    @DisplayName("Автокомплит сотрудников — фильтр по букве")
+    public void autocompleteEmployeesWithFilter() {
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("page", 0)
+                .queryParam("size", 20)
+                .queryParam("name", "ч")
+                .when()
+                .get("/api/users/autocomplete/employee")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content.name", everyItem(containsStringIgnoringCase("ч")));
+    }
+
+    // =====================================================================
+    // СОЗДАНИЕ ПОЛЬЗОВАТЕЛЯ
+    // =====================================================================
+
+    @Test
+    @Order(13)
+    @Description("Создание пользователя с базовыми полями")
+    @DisplayName("Создание пользователя — базовый")
+    public void createUser() {
+        Response response = given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .body(TestDataJson.CreateUser)
+                .when()
+                .post("/api/users/user_employee")
+                .then()
+                .statusCode(200)
+                .body("userId", notNullValue())
+                .body("userIsActive", equalTo(true))
+                .body("userRole.name", equalTo("Администратор"))
+                .extract()
+                .response();
+
+        createdUserId = response.jsonPath().getString("userId");
+        createdUserLogin = response.jsonPath().getString("userLogin");
+
+        assertNotNull(createdUserId, "userId не должен быть null после создания");
+        assertNotNull(createdUserLogin, "userLogin не должен быть null после создания");
+    }
+
+
+
+    // ПОИСК / ФИЛЬТРАЦИЯ ПОЛЬЗОВАТЕЛЕЙ
+
+
+    @Test
+    @Order(14)
+    @Description("Поиск пользователя по имени через фильтрацию")
+    @DisplayName("Фильтрация пользователей по имени")
+    public void filterUsers() {
+        String filterBody = "[{"
+                + "\"value\":\"автотест\","
+                + "\"field\":\"name\","
+                + "\"operator\":\"like\","
+                + "\"logicalOperator\":\"and\""
+                + "}]";
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("sort", "name,asc")
+                .queryParam("page", 0)
+                .queryParam("size", 10)
+                .queryParam("showArchive", false)
+                .body(filterBody)
+                .when()
+                .post("/api/users/user/flat/filtering")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].name", notNullValue());
+    }
+
+    @Test
+    @Order(15)
+    @Description("Поиск созданного пользователя по логину")
+    @DisplayName("Фильтрация пользователей — поиск созданного")
+    public void filterUsersByLogin() {
+        assumeUserCreated();
+
+        String filterBody = "[{"
+                + "\"value\":\"" + createdUserLogin + "\","
+                + "\"field\":\"login\","
+                + "\"operator\":\"like\","
+                + "\"logicalOperator\":\"and\""
+                + "}]";
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .queryParam("sort", "name,asc")
+                .queryParam("page", 0)
+                .queryParam("size", 10)
+                .queryParam("showArchive", false)
+                .body(filterBody)
+                .when()
+                .post("/api/users/user/flat/filtering")
+                .then()
+                .statusCode(200)
+                .body("content", not(empty()))
+                .body("content[0].login", equalTo(createdUserLogin));
+    }
+
+    // =====================================================================
+    // УДАЛЕНИЕ ПОЛЬЗОВАТЕЛЯ (возврат в исходное состояние)
+    // =====================================================================
+
+    @Test
+    @Order(16)
+    @Description("Удаление созданного пользователя — возврат в исходное состояние")
+    @DisplayName("Удаление пользователя")
+    public void deleteCreatedUser() throws Exception {
+        assumeUserCreated();
+
+        String requestBody = given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .when()
+                .get("/api/users/user_employee/" + createdUserId)
+                .then()
+                .statusCode(200)
+                .extract()
+                .body().asString();
+
+        String updatedBody = JsonUtils.changeField(requestBody, "userIsDelete", true);
+
+        given()
+                .headers("Authorization", "Bearer " + accessToken,
+                        "Content-Type", "application/json; charset=UTF-8")
+                .body(updatedBody)
+                .when()
+                .put("/api/users/user_employee/" + createdUserId)
+                .then()
+                .statusCode(200)
+                .body("userIsDelete", equalTo(true));
+    }
+
+    // =====================================================================
+    // ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ
+    // =====================================================================
+
+    private void assumeUserCreated() {
+        org.junit.jupiter.api.Assumptions.assumeTrue(
+                createdUserId != null,
+                "Тест пропущен: пользователь не был создан в createUser()"
+        );
     }
 }
