@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TasksTest" time="36.727" tests="27" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TasksTest" time="36.961" tests="27" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire12450043518913266852\surefirebooter-20260328125743781_3.jar C:\Users\User\AppData\Local\Temp\surefire12450043518913266852 2026-03-28T12-57-43_655-jvmRun1 surefire-20260328125743781_1tmp surefire_0-20260328125743781_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire10653035531871815342\surefirebooter-20260328183501822_3.jar C:\Users\User\AppData\Local\Temp\surefire10653035531871815342 2026-03-28T18-35-01_700-jvmRun1 surefire-20260328183501822_1tmp surefire_0-20260328183501822_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\Desktop\CRMNew-main\target\test-classes;C:\Users\User\Desktop\CRMNew-main\target\classes;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\User\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured\5.1.1\rest-assured-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\User\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\User\.m2\repository\io\rest-assured\json-path\5.1.1\json-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured-common\5.1.1\rest-assured-common-5.1.1.jar;C:\Users\User\.m2\repository\io\rest-assured\xml-path\5.1.1\xml-path-5.1.1.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit5\2.27.0\allure-junit5-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit-platform\2.27.0\allure-junit-platform-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-rest-assured\2.27.0\allure-rest-assured-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-attachments\2.27.0\allure-attachments-2.27.0.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\User\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.12.21\byte-buddy-1.12.21.jar;C:\Users\User\.m2\repository\com\github\tomakehurst\wiremock\2.27.2\wiremock-2.27.2.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-server\9.2.28.v20190418\jetty-server-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-http\9.2.28.v20190418\jetty-http-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-io\9.2.28.v20190418\jetty-io-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-servlet\9.2.28.v20190418\jetty-servlet-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-security\9.2.28.v20190418\jetty-security-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-servlets\9.2.28.v20190418\jetty-servlets-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-continuation\9.2.28.v20190418\jetty-continuation-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-util\9.2.28.v20190418\jetty-util-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-webapp\9.2.28.v20190418\jetty-webapp-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-xml\9.2.28.v20190418\jetty-xml-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-proxy\9.2.28.v20190418\jetty-proxy-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-client\9.2.28.v20190418\jetty-client-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\com\google\guava\guava\20.0\guava-20.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-core\2.7.0\xmlunit-core-2.7.0.jar;C:\Users\User\.m2\repository\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-legacy\2.7.0\xmlunit-legacy-2.7.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-placeholders\2.7.0\xmlunit-placeholders-2.7.0.jar;C:\Users\User\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\User\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\User\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\User\.m2\repository\org\ow2\asm\asm\7.0\asm-7.0.jar;C:\Users\User\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.3\jopt-simple-5.0.3.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\User\.m2\repository\com\github\jknack\handlebars\4.0.7\handlebars-4.0.7.jar;C:\Users\User\.m2\repository\org\antlr\antlr4-runtime\4.7.1\antlr4-runtime-4.7.1.jar;C:\Users\User\.m2\repository\com\github\jknack\handlebars-helpers\4.0.7\handlebars-helpers-4.0.7.jar;C:\Users\User\.m2\repository\com\flipkart\zjsonpatch\zjsonpatch\0.4.4\zjsonpatch-0.4.4.jar;C:\Users\User\.m2\repository\commons-fileupload\commons-fileupload\1.4\commons-fileupload-1.4.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;C:\Users\User\.m2\repository\org\json\json\20240303\json-20240303.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.13\slf4j-simple-2.0.13.jar;C:\Users\User\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;"/>
     <property name="allure.results.directory" value="C:\Users\User\Desktop\CRMNew-main\target/allure-results"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire12450043518913266852\surefirebooter-20260328125743781_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire10653035531871815342\surefirebooter-20260328183501822_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
@@ -64,20 +64,20 @@
     <property name="javax.xml.transform.TransformerFactory" value="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="displayOfRequests" classname="TasksTest" time="0.168"/>
-  <testcase name="getInfoTask" classname="TasksTest" time="0.145"/>
-  <testcase name="createApplication" classname="TasksTest" time="2.483">
+  <testcase name="displayOfRequests" classname="TasksTest" time="0.16"/>
+  <testcase name="getInfoTask" classname="TasksTest" time="0.155"/>
+  <testcase name="createApplication" classname="TasksTest" time="2.494">
     <system-out><![CDATA[{
     "createdBy": "Черников Дмитрий Витальевич",
-    "createdDate": "2026-03-28 12:59:19.293",
+    "createdDate": "2026-03-28 18:36:43.719",
     "lastModifiedBy": "Черников Дмитрий Витальевич",
-    "lastModifiedDate": "2026-03-28 12:59:19.293",
+    "lastModifiedDate": "2026-03-28 18:36:43.719",
     "deletedDate": null,
     "deletedBy": null,
     "isDelete": null,
-    "id": "a8af5ed7-2185-46fd-be22-5d753fe27bb0",
+    "id": "4823c53f-38bc-49fe-9d7a-5b92a9905794",
     "name": "автотест",
-    "number": 9267,
+    "number": 9281,
     "closeDate": null,
     "statusAcceptance": null,
     "statusApplication": {
@@ -827,28 +827,28 @@
     "rentObjectUk": null,
     "evaluationApplication": null
 }
-a8af5ed7-2185-46fd-be22-5d753fe27bb0
+4823c53f-38bc-49fe-9d7a-5b92a9905794
 ]]></system-out>
   </testcase>
-  <testcase name="viewingDocumentOnTask" classname="TasksTest" time="0.544"/>
-  <testcase name="displayOfDeleteTask" classname="TasksTest" time="0.167"/>
-  <testcase name="editApplication" classname="TasksTest" time="2.776">
+  <testcase name="viewingDocumentOnTask" classname="TasksTest" time="0.293"/>
+  <testcase name="displayOfDeleteTask" classname="TasksTest" time="0.204"/>
+  <testcase name="editApplication" classname="TasksTest" time="2.629">
     <system-out><![CDATA[602de811-808b-4dd0-bf1d-8b83aff042cc
 ]]></system-out>
   </testcase>
-  <testcase name="sendMessageInterior" classname="TasksTest" time="0.149"/>
-  <testcase name="testMessageInWebSocketChat" classname="TasksTest" time="0.274">
-    <system-out><![CDATA[🔄 Начинаем тест с сообщением: автотест 1774691964658
+  <testcase name="sendMessageInterior" classname="TasksTest" time="0.21"/>
+  <testcase name="testMessageInWebSocketChat" classname="TasksTest" time="0.285">
+    <system-out><![CDATA[🔄 Начинаем тест с сообщением: автотест 1774712206853
 ✅ WebSocket подключен
 📤 Отправляем сообщение в чат...
-📨 WebSocket получил: {"id":"eac4f06b-ce44-41b3-833f-9911a19ebd63","createdDate":"2026-03-28 12:59:23.208","createdBy":"Черников Дмитрий Витальевич","createdByName":"Черников Дмитрий Витальевич","employeeId":"b69f0af0-43bd-4a37-b3c1-f68c123fde0c","title":"автотест 1774691964658","isUpdated":false,"documents":[],"new":true}
+📨 WebSocket получил: {"id":"ea5b8d5b-38a5-45e6-a5cf-828e5605eb1f","createdDate":"2026-03-28 18:36:47.335","createdBy":"Черников Дмитрий Витальевич","createdByName":"Черников Дмитрий Витальевич","employeeId":"b69f0af0-43bd-4a37-b3c1-f68c123fde0c","title":"автотест 1774712206853","isUpdated":false,"documents":[],"new":true}
 🎯 Нашли наше сообщение!
 ✅ Сообщение отправлено, статус: 200
 ⏳ Ожидаем сообщение в чате (10 секунд)...
 ✅ Тест пройден! Сообщение успешно получено через WebSocket
 ]]></system-out>
   </testcase>
-  <testcase name="getInfoApplication" classname="TasksTest" time="0.129">
+  <testcase name="getInfoApplication" classname="TasksTest" time="0.103">
     <system-out><![CDATA[Request method:	GET
 Request URI:	http://172.20.207.16/api/client-relations/application-full/f9a4324d-9990-4ef7-bd58-32654c3a7b1d
 Proxy:			<none>
@@ -856,7 +856,7 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc0Nzc4MzU2LCJyb2xlcyI6eyJpZCI6ImNjZWQ0NTg1LWUzNTgtNDBiZi04NjE0LTAxYjBiZDM5NDM5YiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCIsImdyb3VwQWNjZXNzZXMiOlt7ImlkIjoiMTQwYTAyMTAtZDFkMS00MzllLWIzYTQtMGVlNWJlNmQyOWQyIiwibmFtZSI6ItCQ0LTQvNC40L3QuNGB0YLRgNCw0YLQvtGAIC0g0L_QvtC70L3Ri9C5INC00L7RgdGC0YPQvyJ9XX0sImZpcnN0TmFtZSI6ItCn0LXRgNC90LjQutC-0LIg0JTQvNC40YLRgNC40Lkg0JLQuNGC0LDQu9GM0LXQstC40YciLCJpZCI6IjAxYmI2NmNjLTY0NTYtNDFjZS05ZmI3LWFkMzhjMjVmZWE0MyIsImVtcGxveWVlSWQiOiJiNjlmMGFmMC00M2JkLTRhMzctYjNjMS1mNjhjMTIzZmRlMGMiLCJpc0NvbnRyYWN0b3IiOmZhbHNlLCJzZXNzaW9uSWQiOiI0ODkwMzE3My1lZDE3LTRkNTktYWJhNi01MTgwYzlmNjFkOTAifQ.-lkZwFaXO7l5ESO_48NIdOkcZXVB-lqIldux46yy_VkcpvOszw12EtXSXGhlGYI82cdhCZcutDJisAVz7reUvA
+Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc0Nzk4NjAwLCJyb2xlcyI6eyJpZCI6ImNjZWQ0NTg1LWUzNTgtNDBiZi04NjE0LTAxYjBiZDM5NDM5YiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCIsImdyb3VwQWNjZXNzZXMiOlt7ImlkIjoiMTQwYTAyMTAtZDFkMS00MzllLWIzYTQtMGVlNWJlNmQyOWQyIiwibmFtZSI6ItCQ0LTQvNC40L3QuNGB0YLRgNCw0YLQvtGAIC0g0L_QvtC70L3Ri9C5INC00L7RgdGC0YPQvyJ9XX0sImZpcnN0TmFtZSI6ItCn0LXRgNC90LjQutC-0LIg0JTQvNC40YLRgNC40Lkg0JLQuNGC0LDQu9GM0LXQstC40YciLCJpZCI6IjAxYmI2NmNjLTY0NTYtNDFjZS05ZmI3LWFkMzhjMjVmZWE0MyIsImVtcGxveWVlSWQiOiJiNjlmMGFmMC00M2JkLTRhMzctYjNjMS1mNjhjMTIzZmRlMGMiLCJpc0NvbnRyYWN0b3IiOmZhbHNlLCJzZXNzaW9uSWQiOiI5ZThjMWU0Yi05ODEyLTRmY2UtYTQ0Ny02ZDc1MmQwMjQ1ZDAifQ.As6wrc8tyy5GSIQG_CyQ6FjIwJLUrpoyN6EK9VR1bcSXTd_VboPDLzuEWZmHeZZ7GcXos--DxCCYUP07FExmYQ
 				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
@@ -864,23 +864,23 @@ Multiparts:		<none>
 Body:			<none>
 ]]></system-out>
   </testcase>
-  <testcase name="getTask" classname="TasksTest" time="0.143"/>
-  <testcase name="getInfoGroupApplication" classname="TasksTest" time="0.091"/>
-  <testcase name="displayOfTasks" classname="TasksTest" time="0.22"/>
-  <testcase name="restoreTask" classname="TasksTest" time="2.669">
+  <testcase name="getTask" classname="TasksTest" time="0.132"/>
+  <testcase name="getInfoGroupApplication" classname="TasksTest" time="0.087"/>
+  <testcase name="displayOfTasks" classname="TasksTest" time="0.206"/>
+  <testcase name="restoreTask" classname="TasksTest" time="2.775">
     <system-out><![CDATA[🔌 WebSocket закрыт: 
 ]]></system-out>
   </testcase>
-  <testcase name="createAndDeleteTask" classname="TasksTest" time="2.76">
+  <testcase name="createAndDeleteTask" classname="TasksTest" time="2.682">
     <system-out><![CDATA[{
     "createdBy": "Черников Дмитрий Витальевич",
-    "createdDate": "2026-03-28 12:59:28.962",
+    "createdDate": "2026-03-28 18:36:53.122",
     "lastModifiedBy": "Черников Дмитрий Витальевич",
-    "lastModifiedDate": "2026-03-28 12:59:28.962",
+    "lastModifiedDate": "2026-03-28 18:36:53.122",
     "deletedDate": null,
     "deletedBy": null,
     "isDelete": null,
-    "id": "a4e82292-0ac0-4c6c-b995-3604d6bd4b21",
+    "id": "f1b0c44e-7b01-4795-81ef-a7bbd23fa1ce",
     "name": "тест",
     "number": null,
     "closeDate": null,
@@ -1150,8 +1150,8 @@ Body:			<none>
     "startDate": null,
     "executionDate": null,
     "dependenceDate": null,
-    "planStartDate": "2026-03-28 13:59:28.936",
-    "planExecutionDate": "2026-03-28 16:59:28.936",
+    "planStartDate": "2026-03-28 19:36:53.098",
+    "planExecutionDate": "2026-03-28 22:36:53.098",
     "easyDate": null,
     "easyDateStop": null,
     "channelCommunication": null,
@@ -1653,13 +1653,13 @@ Body:			<none>
 
 Куки
 {}
-Создана задача с ID: a4e82292-0ac0-4c6c-b995-3604d6bd4b21
-Задача с ID a4e82292-0ac0-4c6c-b995-3604d6bd4b21 успешно удалена
+Создана задача с ID: f1b0c44e-7b01-4795-81ef-a7bbd23fa1ce
+Задача с ID f1b0c44e-7b01-4795-81ef-a7bbd23fa1ce успешно удалена
 ]]></system-out>
   </testcase>
-  <testcase name="createTaskPaid" classname="TasksTest" time="2.517"/>
-  <testcase name="displayOfDeleteRequests" classname="TasksTest" time="0.15"/>
-  <testcase name="createTaskEmergency" classname="TasksTest" time="2.64">
+  <testcase name="createTaskPaid" classname="TasksTest" time="2.493"/>
+  <testcase name="displayOfDeleteRequests" classname="TasksTest" time="0.156"/>
+  <testcase name="createTaskEmergency" classname="TasksTest" time="2.543">
     <system-out><![CDATA[Request method:	POST
 Request URI:	http://172.20.207.16/api/client-relations/tasks-full
 Proxy:			<none>
@@ -1667,7 +1667,7 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc0Nzc4MzU2LCJyb2xlcyI6eyJpZCI6ImNjZWQ0NTg1LWUzNTgtNDBiZi04NjE0LTAxYjBiZDM5NDM5YiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCIsImdyb3VwQWNjZXNzZXMiOlt7ImlkIjoiMTQwYTAyMTAtZDFkMS00MzllLWIzYTQtMGVlNWJlNmQyOWQyIiwibmFtZSI6ItCQ0LTQvNC40L3QuNGB0YLRgNCw0YLQvtGAIC0g0L_QvtC70L3Ri9C5INC00L7RgdGC0YPQvyJ9XX0sImZpcnN0TmFtZSI6ItCn0LXRgNC90LjQutC-0LIg0JTQvNC40YLRgNC40Lkg0JLQuNGC0LDQu9GM0LXQstC40YciLCJpZCI6IjAxYmI2NmNjLTY0NTYtNDFjZS05ZmI3LWFkMzhjMjVmZWE0MyIsImVtcGxveWVlSWQiOiJiNjlmMGFmMC00M2JkLTRhMzctYjNjMS1mNjhjMTIzZmRlMGMiLCJpc0NvbnRyYWN0b3IiOmZhbHNlLCJzZXNzaW9uSWQiOiI0ODkwMzE3My1lZDE3LTRkNTktYWJhNi01MTgwYzlmNjFkOTAifQ.-lkZwFaXO7l5ESO_48NIdOkcZXVB-lqIldux46yy_VkcpvOszw12EtXSXGhlGYI82cdhCZcutDJisAVz7reUvA
+Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc0Nzk4NjAwLCJyb2xlcyI6eyJpZCI6ImNjZWQ0NTg1LWUzNTgtNDBiZi04NjE0LTAxYjBiZDM5NDM5YiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCIsImdyb3VwQWNjZXNzZXMiOlt7ImlkIjoiMTQwYTAyMTAtZDFkMS00MzllLWIzYTQtMGVlNWJlNmQyOWQyIiwibmFtZSI6ItCQ0LTQvNC40L3QuNGB0YLRgNCw0YLQvtGAIC0g0L_QvtC70L3Ri9C5INC00L7RgdGC0YPQvyJ9XX0sImZpcnN0TmFtZSI6ItCn0LXRgNC90LjQutC-0LIg0JTQvNC40YLRgNC40Lkg0JLQuNGC0LDQu9GM0LXQstC40YciLCJpZCI6IjAxYmI2NmNjLTY0NTYtNDFjZS05ZmI3LWFkMzhjMjVmZWE0MyIsImVtcGxveWVlSWQiOiJiNjlmMGFmMC00M2JkLTRhMzctYjNjMS1mNjhjMTIzZmRlMGMiLCJpc0NvbnRyYWN0b3IiOmZhbHNlLCJzZXNzaW9uSWQiOiI5ZThjMWU0Yi05ODEyLTRmY2UtYTQ0Ny02ZDc1MmQwMjQ1ZDAifQ.As6wrc8tyy5GSIQG_CyQ6FjIwJLUrpoyN6EK9VR1bcSXTd_VboPDLzuEWZmHeZZ7GcXos--DxCCYUP07FExmYQ
 				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
@@ -2017,20 +2017,20 @@ Body:
     },
     "levelLoyalty": "Лояльный"
 }
-2e124bfd-820d-4390-b6db-7dda97d23e31
+72bb7d98-3816-441b-a824-dd1ece6183cb
 ]]></system-out>
   </testcase>
-  <testcase name="getApplication" classname="TasksTest" time="0.134"/>
-  <testcase name="createTaskWithApplication" classname="TasksTest" time="2.524">
+  <testcase name="getApplication" classname="TasksTest" time="0.121"/>
+  <testcase name="createTaskWithApplication" classname="TasksTest" time="2.564">
     <system-out><![CDATA[{
     "createdBy": "Черников Дмитрий Витальевич",
-    "createdDate": "2026-03-28 12:59:37.229",
+    "createdDate": "2026-03-28 18:37:01.195",
     "lastModifiedBy": "Черников Дмитрий Витальевич",
-    "lastModifiedDate": "2026-03-28 12:59:37.229",
+    "lastModifiedDate": "2026-03-28 18:37:01.195",
     "deletedDate": null,
     "deletedBy": null,
     "isDelete": null,
-    "id": "620b5904-1017-4770-9daf-527a5bb820d2",
+    "id": "f301c395-5b3d-419a-bd21-dbafc1ed2b79",
     "name": "тест123",
     "number": null,
     "closeDate": null,
@@ -2300,8 +2300,8 @@ Body:
     "startDate": null,
     "executionDate": null,
     "dependenceDate": null,
-    "planStartDate": "2026-03-28 13:59:37.205",
-    "planExecutionDate": "2026-03-28 16:59:37.205",
+    "planStartDate": "2026-03-28 19:37:01.169",
+    "planExecutionDate": "2026-03-28 22:37:01.169",
     "easyDate": null,
     "easyDateStop": null,
     "channelCommunication": null,
@@ -2802,21 +2802,21 @@ Body:
 }
 ]]></system-out>
   </testcase>
-  <testcase name="createAndDeleteApplication" classname="TasksTest" time="2.684">
-    <system-out><![CDATA[Создана заявка с ID: 688264da-c010-4fd3-833e-128314e29e2e
-Заявка с ID 688264da-c010-4fd3-833e-128314e29e2e успешно удалена и недоступна для получения
+  <testcase name="createAndDeleteApplication" classname="TasksTest" time="2.766">
+    <system-out><![CDATA[Создана заявка с ID: dea5dfe0-3e45-498b-836e-27e0b4c36bc6
+Заявка с ID dea5dfe0-3e45-498b-836e-27e0b4c36bc6 успешно удалена и недоступна для получения
 ]]></system-out>
   </testcase>
-  <testcase name="createTask" classname="TasksTest" time="2.451">
+  <testcase name="createTask" classname="TasksTest" time="2.61">
     <system-out><![CDATA[{
     "createdBy": "Черников Дмитрий Витальевич",
-    "createdDate": "2026-03-28 12:59:42.368",
+    "createdDate": "2026-03-28 18:37:06.558",
     "lastModifiedBy": "Черников Дмитрий Витальевич",
-    "lastModifiedDate": "2026-03-28 12:59:42.368",
+    "lastModifiedDate": "2026-03-28 18:37:06.558",
     "deletedDate": null,
     "deletedBy": null,
     "isDelete": null,
-    "id": "2927a8c8-abe4-48f9-9aa4-192b3c86ef8d",
+    "id": "fdeb6a79-cb0b-4caa-81dd-3be6a9ffd218",
     "name": "тест",
     "number": null,
     "closeDate": null,
@@ -3086,8 +3086,8 @@ Body:
     "startDate": null,
     "executionDate": null,
     "dependenceDate": null,
-    "planStartDate": "2026-03-28 13:59:42.357",
-    "planExecutionDate": "2026-03-28 16:59:42.357",
+    "planStartDate": "2026-03-28 19:37:06.470",
+    "planExecutionDate": "2026-03-28 22:37:06.470",
     "easyDate": null,
     "easyDateStop": null,
     "channelCommunication": null,
@@ -3591,14 +3591,14 @@ Body:
 {}
 ]]></system-out>
   </testcase>
-  <testcase name="restoreApplication" classname="TasksTest" time="2.647"/>
-  <testcase name="documentsApplication" classname="TasksTest" time="0.162"/>
-  <testcase name="editTask" classname="TasksTest" time="2.556">
+  <testcase name="restoreApplication" classname="TasksTest" time="2.752"/>
+  <testcase name="documentsApplication" classname="TasksTest" time="0.157"/>
+  <testcase name="editTask" classname="TasksTest" time="2.515">
     <system-out><![CDATA[{
     "createdBy": "Черников Дмитрий Витальевич",
     "createdDate": "2026-02-17 17:03:22.573",
     "lastModifiedBy": "Черников Дмитрий Витальевич",
-    "lastModifiedDate": "2026-03-28 12:59:47.749",
+    "lastModifiedDate": "2026-03-28 18:37:12.070",
     "deletedDate": null,
     "deletedBy": null,
     "isDelete": null,
@@ -4800,7 +4800,7 @@ Body:
 {}
 ]]></system-out>
   </testcase>
-  <testcase name="documentsTask" classname="TasksTest" time="0.146"/>
-  <testcase name="deleteApplication" classname="TasksTest" time="2.611"/>
-  <testcase name="deleteTask" classname="TasksTest" time="2.65"/>
+  <testcase name="documentsTask" classname="TasksTest" time="0.152"/>
+  <testcase name="deleteApplication" classname="TasksTest" time="2.808"/>
+  <testcase name="deleteTask" classname="TasksTest" time="2.737"/>
 </testsuite>

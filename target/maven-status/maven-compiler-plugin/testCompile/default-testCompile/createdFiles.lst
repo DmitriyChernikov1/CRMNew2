@@ -17,4 +17,5 @@ utils\JsonUtils.class
 ContactsTest.class
 ReservationTest.class
 utils\TimeGenerated.class
+AdministrationApiTest.class
 BaseTest.class
