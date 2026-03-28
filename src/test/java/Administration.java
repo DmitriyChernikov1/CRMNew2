@@ -1,12 +1,18 @@
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext;
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import net.bytebuddy.pool.TypePool;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import utils.TestDataJson;
+import static org.hamcrest.Matchers.*;
+import java.util.HashMap;
+import java.util.Map;
 
+import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Administration {
@@ -22,7 +28,7 @@ public class Administration {
     }
     // Базовый запрос с авторизацией — baseUri берётся из RestAssured.baseURI выше
     private RequestSpecification authRequest() {
-        return RestAssured.given()
+        return given()
                 .baseUri(BASE_URL)
                 .header("Content-Type", "application/json; charset=UTF-8")
                 .header("accept", "application/json")
@@ -111,5 +117,38 @@ public class Administration {
         // Проверяем userIsDelete = true в ответе
         String isDelete = putResponse.jsonPath().getString("userIsDelete");
         assertEquals("true", isDelete, "userIsDelete должен быть true");
+    }
+    /*
+    @Test
+    @Description("проверка фильтра")
+    @DisplayName("проверка фильтра")
+    public void tableSetting(){
+
+        Map <String,String> body = new HashMap<>();
+        body.put("value","Сопин");
+        body.put("field","name");
+        body.put("operator","like");
+        body.put("logicalOperator","and");
+        Response table =
+                authRequest()
+                .body(body)
+                .when()
+                .post("/api/users/user/flat/filtering?sort=name,asc&page=0&size=10&showArchive=false")
+                        .then()
+                        .log().all()
+                        .statusCode(200)
+                        .body("$",not(empty()))
+                        .extract().response();
+    }*/
+    @Test
+    @Description("получение настроек")
+    @DisplayName("получение настроек")
+    public void getSettingsTable(){
+        Response getSettings = authRequest()
+                .get("http://172.20.207.16/api/users/settings-table/settings?userId=01bb66cc-6456-41ce-9fb7-ad38c25fea43&tableName=user")
+                .then()
+                .statusCode(200)
+                .body("$",not(empty()))
+                .extract().response();
     }
 }
