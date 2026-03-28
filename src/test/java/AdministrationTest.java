@@ -1,21 +1,17 @@
-import com.fasterxml.jackson.databind.introspect.TypeResolutionContext;
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import net.bytebuddy.pool.TypePool;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import utils.TestDataJson;
 import static org.hamcrest.Matchers.*;
-import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Administration {
+public class AdministrationTest {
     private static String accessToken;
 
     private static final String BASE_URL = "http://172.20.207.16";
