@@ -94,6 +94,7 @@ public class ApplicationTaskTest {
                 .baseUri(BASE_URL)
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json, text/plain, */*")
+                .header("Accept-Language", "ru,ru-RU;q=0.9,en-US;q=0.8,en;q=0.7")
                 .header("Authorization", "Bearer " + accessToken);
     }
 
@@ -693,30 +694,72 @@ public class ApplicationTaskTest {
 
     @Test
     @Order(17)
-    @Description("Проверка: задача присутствует в связанных задачах заявки")
-    @DisplayName("POST /related-collections/task/filtering/{taskId} — задача есть в связях")
-    public void checkTaskInRelatedCollections() {
+    @Description("Проверка: заявка присутствует в списке связанных заявок задачи")
+    @DisplayName("POST /related-collections/task/filtering/{taskId} — связанная заявка найдена")
+    public void checkApplicationInTaskRelatedCollections() {
         assertNotNull(createdTaskId, "Требуется createdTaskId из предыдущего шага");
+        assertNotNull(createdApplicationId, "Требуется createdApplicationId из предыдущего шага");
 
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("dtos", List.of());
-
+        // Endpoint принимает массив фильтров (пустой = без фильтров), НЕ объект с полем dtos
+        // Возвращает связанные ЗАЯВКИ задачи, а не саму задачу
         Response response = authRequest()
                 .queryParam("sort", "number,desc")
                 .queryParam("page", 0)
                 .queryParam("size", 10)
                 .queryParam("showArchive", false)
-                .body(body)
+                .body(List.of())
                 .post(CR_API + "/related-collections/task/filtering/" + createdTaskId)
                 .then()
                 .statusCode(200)
                 .extract().response();
 
-        assertNotNull(response.body(), "Ответ со связанными задачами не должен быть null");
+        List<Map<String, Object>> content = response.jsonPath().getList("content");
+        assertNotNull(content, "Список связанных заявок не должен быть null");
+        assertFalse(content.isEmpty(), "Список связанных заявок не должен быть пустым");
+
+        // В content лежат заявки — ищем createdApplicationId по полю "id"
+        boolean found = content.stream()
+                .anyMatch(item -> createdApplicationId.equals(item.get("id")));
+        assertTrue(found,
+                "Созданная заявка " + createdApplicationId +
+                        " должна присутствовать в связанных заявках задачи. " +
+                        "Найденные ID: " + content.stream().map(i -> (String) i.get("id")).toList());
     }
 
     @Test
     @Order(18)
+    @Description("Проверка: задача присутствует в списке связанных задач заявки")
+    @DisplayName("POST /related-collections/application/filtering/{applicationId} — связанная задача найдена")
+    public void checkTaskInApplicationRelatedCollections() {
+        assertNotNull(createdApplicationId, "Требуется createdApplicationId из предыдущего шага");
+        assertNotNull(createdTaskId, "Требуется createdTaskId из предыдущего шага");
+
+        // Зеркальный endpoint — связанные задачи заявки
+        Response response = authRequest()
+                .queryParam("sort", "number,desc")
+                .queryParam("page", 0)
+                .queryParam("size", 10)
+                .queryParam("showArchive", false)
+                .body(List.of())
+                .post(CR_API + "/related-collections/application/filtering/" + createdApplicationId)
+                .then()
+                .statusCode(200)
+                .extract().response();
+
+        List<Map<String, Object>> content = response.jsonPath().getList("content");
+        assertNotNull(content, "Список связанных задач не должен быть null");
+        assertFalse(content.isEmpty(), "Список связанных задач не должен быть пустым");
+
+        boolean found = content.stream()
+                .anyMatch(item -> createdTaskId.equals(item.get("id")));
+        assertTrue(found,
+                "Созданная задача " + createdTaskId +
+                        " должна присутствовать в связанных задачах заявки. " +
+                        "Найденные ID: " + content.stream().map(i -> (String) i.get("id")).toList());
+    }
+
+    @Test
+    @Order(19)
     @Description("Итоговая проверка: заявка присутствует и содержит корректные данные")
     @DisplayName("GET /application-full/{id} — финальная проверка заявки")
     public void finalCheckApplication() {

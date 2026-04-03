@@ -270,7 +270,7 @@ public class AdministrationTest {
         Response response = given()
                 .headers("Authorization", "Bearer " + accessToken,
                         "Content-Type", "application/json; charset=UTF-8")
-                .body(TestDataJson.CreateUser)
+                .body(TestDataJson.CreateUser())
                 .when()
                 .post("/api/users/user_employee")
                 .then()

@@ -261,7 +261,7 @@ public class AuthTest {
     @DisplayName("Вход новым пользователем, с придумываением пароля")
     public void newEmployee() {
         // Шаг 1 — создание пользователя
-        String createBody = TestDataJson.CreateUser;
+        String createBody = TestDataJson.CreateUser();
 
         Response createResponse = authRequest()
                 .body(createBody)
