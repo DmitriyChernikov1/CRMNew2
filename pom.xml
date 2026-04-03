@@ -16,7 +16,7 @@
     </properties>
 
     <dependencies>
-        <!-- JUnit 5 -->
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -26,7 +26,7 @@
 
 
 
-        <!-- WebSocket -->
+
         <dependency>
             <groupId>org.java-websocket</groupId>
             <artifactId>Java-WebSocket</artifactId>
@@ -34,7 +34,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- REST Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -42,14 +41,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Jackson -->
+
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.12.5</version>
         </dependency>
 
-        <!-- Allure + JUnit5 -->
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
@@ -57,7 +56,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Allure + REST Assured (логирование запросов/ответов в отчёт) -->
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
@@ -65,7 +64,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- AssertJ -->
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -79,14 +78,13 @@
             <version>2.27.2</version>
             <scope>test</scope>
         </dependency>
-        <!-- JSON -->
+
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20240303</version>
         </dependency>
 
-        <!-- Логирование -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -94,7 +92,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- AspectJ (нужен для корректной работы Allure аннотаций) -->
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -142,7 +140,7 @@
         </pluginManagement>
 
         <plugins>
-            <!-- Surefire — запуск тестов -->
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -165,7 +163,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Allure Maven — генерация отчёта -->
+
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
