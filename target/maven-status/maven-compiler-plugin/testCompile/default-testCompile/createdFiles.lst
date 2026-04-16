@@ -8,6 +8,7 @@ CreateMeetTest.class
 ReservationTest.class
 utils\TimeGenerated.class
 AuthTokenTest.class
+DbConfig.class
 CalendarTest.class
 PriorityTaskApiTest.class
 ProprietorListApiTest.class

@@ -12,6 +12,7 @@ import utils.TestDataJson;
 import java.util.HashMap;
 import java.util.Map;
 
+import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -37,7 +38,7 @@ public class AuthTest {
 
     // Базовый запрос с авторизацией — baseUri берётся из RestAssured.baseURI выше
     private RequestSpecification authRequest() {
-        return RestAssured.given()
+        return given()
                 .baseUri(BASE_URL)
                 .header("Content-Type", "application/json; charset=UTF-8")
                 .header("accept", "application/json")
@@ -241,7 +242,7 @@ public class AuthTest {
             step2Body.put("password", "JeE-rfW-5TP-hTD2");
             step2Body.put("otp", "12346");
 
-            RestAssured.given()
+            given()
                     .baseUri("http://localhost:8089")
                     .header("Content-Type", "application/json; charset=UTF-8")
                     .header("accept", "application/json")
@@ -348,4 +349,38 @@ public class AuthTest {
         String isDelete = putResponse.jsonPath().getString("userIsDelete");
         assertEquals("true", isDelete, "userIsDelete должен быть true");
     }
+   /*@Test
+    @Description("тест мока 401")
+    @DisplayName("тест мока 401")
+    public void test401(){
+        WireMockServer wireMockServer = new WireMockServer(WireMockConfiguration.options().port(8089));
+        wireMockServer.start();
+        try {
+            // Мокаем только loginOTP — возвращаем 200 вместо 401
+            wireMockServer.stubFor(
+                    WireMock.post(WireMock.urlEqualTo("/users/auth/login"))
+                            .willReturn(WireMock.aResponse()
+                                    .withStatus(401)
+                                    .withHeader("Content-Type", "application/json")
+                                    )
+            );
+            Map<String, String> authBody = new HashMap<>();
+            authBody.put("login", "dimon.ag336@gmail.com");
+            authBody.put("password", "JeE-rfW-5TP-hTD2333");
+
+            Response response =given()
+                    .baseUri("http://localhost:8089")
+                    .header("Content-Type", "application/json; charset=UTF-8")
+                    .header("accept", "application/json")
+                    .body(authBody)
+                    .post("/users/auth/login")
+                    .then()
+                    .statusCode(401)
+                    .extract().response();
+            response.prettyPrint();
+
+        } finally {
+            wireMockServer.stop();
+        }
+    }*/
 }
