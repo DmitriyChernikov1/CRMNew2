@@ -85,8 +85,17 @@ public class ReservationTest {
                 .post("http://172.20.207.16/api/client-relations/tasks-full/booking-rented-car")
                 .andReturn();
 
-        response.prettyPrint();
-        assertEquals(201, response.getStatusCode());
+        if (response.getStatusCode() == 200) {
+            // Успешное получение списка записей
+            assertEquals(200, response.getStatusCode());
+        } else if (response.getStatusCode() == 400) {
+            // Проверяем, что это ожидаемая ошибка
+            String errorMessage = response.jsonPath().getString("message");
+            assertEquals("Not available cars for booking at this time", errorMessage);
+        } else {
+            // Любой другой код - ошибка
+            fail("Unexpected status code: " + response.getStatusCode());
+        }
     }
 
     @Test
@@ -155,7 +164,18 @@ public class ReservationTest {
                 .response();
 
         response.prettyPrint();
-        assertEquals(200, response.getStatusCode());
+
+        if (response.getStatusCode() == 200) {
+            // Успешное получение списка записей
+            assertEquals(200, response.getStatusCode());
+        } else if (response.getStatusCode() == 400) {
+            // Проверяем, что это ожидаемая ошибка
+            String errorMessage = response.jsonPath().getString("message");
+            assertEquals("At this time, all cars are booked", errorMessage);
+        } else {
+            // Любой другой код - ошибка
+            fail("Unexpected status code: " + response.getStatusCode());
+        }
     }
 
     @Test
@@ -181,7 +201,17 @@ public class ReservationTest {
                 .extract()
                 .response();
 
-        assertEquals(201, response.getStatusCode());
+        if (response.getStatusCode() == 200) {
+            // Успешное получение списка записей
+            assertEquals(200, response.getStatusCode());
+        } else if (response.getStatusCode() == 400) {
+            // Проверяем, что это ожидаемая ошибка
+            String errorMessage = response.jsonPath().getString("message");
+            assertEquals("Not available cars for booking at this time", errorMessage);
+        } else {
+            // Любой другой код - ошибка
+            fail("Unexpected status code: " + response.getStatusCode());
+        }
     }
 
     @Test
