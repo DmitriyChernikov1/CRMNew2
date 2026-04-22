@@ -1,3 +1,4 @@
+UserGroupApplicationTest.class
 ReservationCarTest.class
 AdministrationTest.class
 StatusTasksTest.class
@@ -7,6 +8,7 @@ utils\JsonUtils.class
 CreateMeetTest.class
 ReservationTest.class
 utils\TimeGenerated.class
+GroupEmployeeTest.class
 AuthTokenTest.class
 DbConfig.class
 CalendarTest.class

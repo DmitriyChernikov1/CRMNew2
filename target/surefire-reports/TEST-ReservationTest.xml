@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ReservationTest" time="23.4" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ReservationTest" time="19.289" tests="9" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire13117301399724252727\surefirebooter-20260421194757291_3.jar C:\Users\User\AppData\Local\Temp\surefire13117301399724252727 2026-04-21T19-47-57_164-jvmRun1 surefire-20260421194757291_1tmp surefire_0-20260421194757291_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire16938060575788313821\surefirebooter-20260422214349669_3.jar C:\Users\User\AppData\Local\Temp\surefire16938060575788313821 2026-04-22T21-43-49_553-jvmRun1 surefire-20260422214349669_1tmp surefire_0-20260422214349669_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\Desktop\CRMNew-main\target\test-classes;C:\Users\User\Desktop\CRMNew-main\target\classes;C:\Users\User\.m2\repository\org\postgresql\postgresql\42.7.3\postgresql-42.7.3.jar;C:\Users\User\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar;C:\Users\User\.m2\repository\org\java-websocket\Java-WebSocket\1.5.3\Java-WebSocket-1.5.3.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured\5.1.1\rest-assured-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy\4.0.1\groovy-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-xml\4.0.1\groovy-xml-4.0.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\User\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\User\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\User\.m2\repository\io\rest-assured\json-path\5.1.1\json-path-5.1.1.jar;C:\Users\User\.m2\repository\org\apache\groovy\groovy-json\4.0.1\groovy-json-4.0.1.jar;C:\Users\User\.m2\repository\io\rest-assured\rest-assured-common\5.1.1\rest-assured-common-5.1.1.jar;C:\Users\User\.m2\repository\io\rest-assured\xml-path\5.1.1\xml-path-5.1.1.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit5\2.27.0\allure-junit5-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-junit-platform\2.27.0\allure-junit-platform-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-java-commons\2.27.0\allure-java-commons-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-model\2.27.0\allure-model-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-test-filter\2.27.0\allure-test-filter-2.27.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-rest-assured\2.27.0\allure-rest-assured-2.27.0.jar;C:\Users\User\.m2\repository\io\qameta\allure\allure-attachments\2.27.0\allure-attachments-2.27.0.jar;C:\Users\User\.m2\repository\org\freemarker\freemarker\2.3.31\freemarker-2.3.31.jar;C:\Users\User\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.12.21\byte-buddy-1.12.21.jar;C:\Users\User\.m2\repository\com\github\tomakehurst\wiremock\2.27.2\wiremock-2.27.2.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-server\9.2.28.v20190418\jetty-server-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-http\9.2.28.v20190418\jetty-http-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-io\9.2.28.v20190418\jetty-io-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-servlet\9.2.28.v20190418\jetty-servlet-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-security\9.2.28.v20190418\jetty-security-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-servlets\9.2.28.v20190418\jetty-servlets-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-continuation\9.2.28.v20190418\jetty-continuation-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-util\9.2.28.v20190418\jetty-util-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-webapp\9.2.28.v20190418\jetty-webapp-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-xml\9.2.28.v20190418\jetty-xml-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-proxy\9.2.28.v20190418\jetty-proxy-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\org\eclipse\jetty\jetty-client\9.2.28.v20190418\jetty-client-9.2.28.v20190418.jar;C:\Users\User\.m2\repository\com\google\guava\guava\20.0\guava-20.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-core\2.7.0\xmlunit-core-2.7.0.jar;C:\Users\User\.m2\repository\javax\xml\bind\jaxb-api\2.3.0\jaxb-api-2.3.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-legacy\2.7.0\xmlunit-legacy-2.7.0.jar;C:\Users\User\.m2\repository\org\xmlunit\xmlunit-placeholders\2.7.0\xmlunit-placeholders-2.7.0.jar;C:\Users\User\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\User\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\User\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\User\.m2\repository\org\ow2\asm\asm\7.0\asm-7.0.jar;C:\Users\User\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.3\jopt-simple-5.0.3.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\User\.m2\repository\com\github\jknack\handlebars\4.0.7\handlebars-4.0.7.jar;C:\Users\User\.m2\repository\org\antlr\antlr4-runtime\4.7.1\antlr4-runtime-4.7.1.jar;C:\Users\User\.m2\repository\com\github\jknack\handlebars-helpers\4.0.7\handlebars-helpers-4.0.7.jar;C:\Users\User\.m2\repository\com\flipkart\zjsonpatch\zjsonpatch\0.4.4\zjsonpatch-0.4.4.jar;C:\Users\User\.m2\repository\commons-fileupload\commons-fileupload\1.4\commons-fileupload-1.4.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar;C:\Users\User\.m2\repository\org\json\json\20240303\json-20240303.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-simple\2.0.13\slf4j-simple-2.0.13.jar;C:\Users\User\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;"/>
     <property name="allure.results.directory" value="C:\Users\User\Desktop\CRMNew-main\target/allure-results"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire13117301399724252727\surefirebooter-20260421194757291_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire16938060575788313821\surefirebooter-20260422214349669_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
@@ -64,7 +64,7 @@
     <property name="javax.xml.transform.TransformerFactory" value="com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="createReservation" classname="ReservationTest" time="2.789">
+  <testcase name="createReservation" classname="ReservationTest" time="2.307">
     <system-out><![CDATA[Request method:	POST
 Request URI:	http://172.20.207.16/api/client-relations/tasks-full/booking-rented-car
 Proxy:			<none>
@@ -72,7 +72,7 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2ODc2ODEwLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiZDIxMzBhMDAtMWFjZi00YzhlLTg1MWQtNmQzZTdhOGQ3ZDNiIn0.NHBzDUceBsAru23Hv52ZQ3TIt-fsPJ_QKQStzAuLhEfbWOm7oVTtHKC8a8OGT4S7vlku73HsOEw3623buzP8uQ
+Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2OTcwMTcxLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiNmQ1YTgzNjUtMDAwNC00ZWI3LTk1NWEtZTY5M2U2ZTBjOWRjIn0.DoBw6NLVnPhf38WTV686SeI5AhP_LS7eqgmeO2srcSP1kXniPmfp-FxSNXt5FLPTu2zZ8HfZs8bSC8605rIUVg
 				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
@@ -80,12 +80,12 @@ Multiparts:		<none>
 Body:
 {
     "destination": "Автотест",
-    "startDate": "2026-04-21 20:00:31.209",
-    "endDate": "2026-04-21 21:00:31.209"
+    "startDate": "2026-04-22 22:00:31.750",
+    "endDate": "2026-04-22 23:00:31.750"
 }
 ]]></system-out>
   </testcase>
-  <testcase name="getReservationFord" classname="ReservationTest" time="2.272">
+  <testcase name="getReservationFord" classname="ReservationTest" time="2.26">
     <system-out><![CDATA[Request method:	POST
 Request URI:	http://172.20.207.16/api/calendar/event/rented-cars-ford
 Proxy:			<none>
@@ -94,21 +94,21 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		accept=*/*
-				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2ODc2ODEwLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiZDIxMzBhMDAtMWFjZi00YzhlLTg1MWQtNmQzZTdhOGQ3ZDNiIn0.NHBzDUceBsAru23Hv52ZQ3TIt-fsPJ_QKQStzAuLhEfbWOm7oVTtHKC8a8OGT4S7vlku73HsOEw3623buzP8uQ
+				Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2OTcwMTcxLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiNmQ1YTgzNjUtMDAwNC00ZWI3LTk1NWEtZTY5M2U2ZTBjOWRjIn0.DoBw6NLVnPhf38WTV686SeI5AhP_LS7eqgmeO2srcSP1kXniPmfp-FxSNXt5FLPTu2zZ8HfZs8bSC8605rIUVg
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "startPlanDate": "2026-04-21 09:00:00.000",
-    "stopPlanDate": "2026-04-21 23:00:00.000",
+    "startPlanDate": "2026-04-22 09:00:00.000",
+    "stopPlanDate": "2026-04-22 23:00:00.000",
     "objectUkIds": [
         "b71a6e71-da3a-46e7-a86f-0e0f0f8ccf67"
     ]
 }
 HTTP/1.1 200 OK
 Server: nginx
-Date: Tue, 21 Apr 2026 16:53:35 GMT
+Date: Wed, 22 Apr 2026 18:49:36 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -186,20 +186,20 @@ Content-Encoding: gzip
 }
 ]]></system-out>
   </testcase>
-  <testcase name="getReservationVats" classname="ReservationTest" time="2.319">
+  <testcase name="getReservationVats" classname="ReservationTest" time="2.303">
     <system-out><![CDATA[{
     "content": [
         {
-            "createdBy": "Некрасов Максим Сергеевич",
-            "createdDate": "2026-04-21 16:05:19.301",
-            "lastModifiedBy": "Некрасов Максим Сергеевич",
-            "lastModifiedDate": "2026-04-21 16:05:19.301",
+            "createdBy": "Белашов Дмитрий Александрович",
+            "createdDate": "2026-04-21 16:10:18.437",
+            "lastModifiedBy": "Белашов Дмитрий Александрович",
+            "lastModifiedDate": "2026-04-21 16:10:18.437",
             "deletedDate": null,
             "deletedBy": null,
             "isDelete": false,
-            "id": "33495cc2-f074-4d2e-aac0-bf841af88228",
+            "id": "5e2c67c6-cf2c-4960-a176-fa6bd7be5d60",
             "name": "Задача по заявке",
-            "number": 53530,
+            "number": 53531,
             "typeEvent": {
                 "createdBy": "user",
                 "createdDate": "2023-01-09 12:28:56.767",
@@ -229,26 +229,26 @@ Content-Encoding: gzip
                 "backgroundColor": "#ECEDF6",
                 "icon": null
             },
-            "startPlanDate": "2026-04-21 16:30:00.000",
-            "stopPlanDate": "2026-04-21 17:00:00.000",
+            "startPlanDate": "2026-04-22 11:00:00.000",
+            "stopPlanDate": "2026-04-22 12:00:00.000",
             "startFactDate": null,
             "stopFactDate": null,
-            "comment": "ВАТС №2 Штаб строительства (центральный вход) => Штаб строительства (центральный вход)",
+            "comment": "ВАТС №2 А22 => А23 => А24",
             "task": {
-                "createdBy": "Некрасов Максим Сергеевич",
-                "createdDate": "2026-04-21 16:05:19.142",
+                "createdBy": "Белашов Дмитрий Александрович",
+                "createdDate": "2026-04-21 16:10:18.316",
                 "lastModifiedBy": "user",
-                "lastModifiedDate": "2026-04-21 17:00:01.647",
+                "lastModifiedDate": "2026-04-22 12:00:01.354",
                 "deletedDate": null,
                 "deletedBy": null,
                 "isDelete": null,
-                "id": "c97dc367-7349-45ba-b238-578f410c73dc",
+                "id": "86f72fa8-86c2-4f8d-9079-fc994732e8d3",
                 "classifierEventProblem1": "Бронирование",
                 "inputJson": {
-                    "id": "c97dc367-7349-45ba-b238-578f410c73dc",
-                    "name": "ВАТС №2 Штаб строительства (центральный вход) => Штаб строительства (центральный вход)",
-                    "number": "21891",
-                    "comment": "Задача ВАТС №2 Штаб строительства (центральный вход) => Штаб строительства (центральный вход)",
+                    "id": "86f72fa8-86c2-4f8d-9079-fc994732e8d3",
+                    "name": "ВАТС №2 А22 => А23 => А24",
+                    "number": "21892",
+                    "comment": "Задача ВАТС №2 А22 => А23 => А24",
                     "clientId": null,
                     "executor": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
                     "isDelete": null,
@@ -271,7 +271,7 @@ Content-Encoding: gzip
                         "typeEquipment": null,
                         "purposeEquipment": null
                     },
-                    "createdBy": "Некрасов Максим Сергеевич",
+                    "createdBy": "Белашов Дмитрий Александрович",
                     "deletedBy": null,
                     "coExecutor": null,
                     "dutyStatus": {
@@ -300,9 +300,9 @@ Content-Encoding: gzip
                         "lastModifiedDate": "2023-01-09 12:28:56.767"
                     },
                     "timeSlotId": null,
-                    "createdDate": "2026-04-21 16:05:19.142",
+                    "createdDate": "2026-04-21 16:10:18.316",
                     "deletedDate": null,
-                    "description": "ВАТС №2 Штаб строительства (центральный вход) => Штаб строительства (центральный вход)",
+                    "description": "ВАТС №2 А22 => А23 => А24",
                     "desiredDate": null,
                     "priorityTask": {
                         "id": "fefcb1ce-c0c9-48f9-b120-f5d6b678cbba",
@@ -319,9 +319,9 @@ Content-Encoding: gzip
                         "lastModifiedDate": "2023-01-09 12:28:56.767"
                     },
                     "stopFactDate": null,
-                    "stopPlanDate": "2026-04-21 17:00:00.000",
+                    "stopPlanDate": "2026-04-22 12:00:00.000",
                     "startFactDate": null,
-                    "startPlanDate": "2026-04-21 16:30:00.000",
+                    "startPlanDate": "2026-04-22 11:00:00.000",
                     "lastModifiedBy": "user",
                     "planStopDateCal": null,
                     "planStartDateCal": null,
@@ -390,15 +390,467 @@ Content-Encoding: gzip
             "follower": null,
             "partyEmployeeDtos": [
                 {
-                    "createdBy": "Некрасов Максим Сергеевич",
-                    "createdDate": "2026-04-21 16:05:19.323",
-                    "lastModifiedBy": "Некрасов Максим Сергеевич",
-                    "lastModifiedDate": "2026-04-21 16:05:19.323",
+                    "createdBy": "Белашов Дмитрий Александрович",
+                    "createdDate": "2026-04-21 16:10:18.451",
+                    "lastModifiedBy": "Белашов Дмитрий Александрович",
+                    "lastModifiedDate": "2026-04-21 16:10:18.451",
                     "deletedDate": null,
                     "deletedBy": null,
                     "isDelete": null,
-                    "id": "b139ec16-566c-4ff0-8569-a98c97ca3030",
-                    "eventId": "33495cc2-f074-4d2e-aac0-bf841af88228",
+                    "id": "50cde5df-17f3-4930-a53e-9b8f1329404b",
+                    "eventId": "5e2c67c6-cf2c-4960-a176-fa6bd7be5d60",
+                    "employee": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
+                    "employeeIdName": "Настройкин Меню Забиякович",
+                    "employeeIdEmail": "menu@mail.ru",
+                    "isMain": true,
+                    "partyStatus": null,
+                    "stopFactDate": null,
+                    "comment": null
+                }
+            ],
+            "followerDtos": [
+                
+            ],
+            "documents": [
+                
+            ]
+        },
+        {
+            "createdBy": "Белашов Дмитрий Александрович",
+            "createdDate": "2026-04-22 10:15:45.402",
+            "lastModifiedBy": "Белашов Дмитрий Александрович",
+            "lastModifiedDate": "2026-04-22 10:20:44.075",
+            "deletedDate": null,
+            "deletedBy": null,
+            "isDelete": false,
+            "id": "f1417a39-6865-4822-aad1-bd1c64a1ed4c",
+            "name": "Задача по заявке",
+            "number": 53895,
+            "typeEvent": {
+                "createdBy": "user",
+                "createdDate": "2023-01-09 12:28:56.767",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2023-01-09 12:28:56.767",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "0472ebfe-de0f-4f8a-b93b-29038e9dee35",
+                "name": "Задача",
+                "color": "7D85C1",
+                "backgroundColor": null,
+                "icon": null
+            },
+            "kindEvent": null,
+            "priorityEvent": {
+                "createdBy": "user",
+                "createdDate": "2023-01-09 12:28:56.767",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2025-02-06 16:30:00.000",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "b105298a-b1de-4215-8d87-6e441825e9e0",
+                "name": "Обычная",
+                "color": "#7D85C1",
+                "backgroundColor": "#ECEDF6",
+                "icon": null
+            },
+            "startPlanDate": "2026-04-22 14:00:00.000",
+            "stopPlanDate": "2026-04-22 14:30:00.000",
+            "startFactDate": null,
+            "stopFactDate": null,
+            "comment": "ВАТС №2 Штаб строительства (вип-вход) => Бытовой городок",
+            "task": {
+                "createdBy": "Белашов Дмитрий Александрович",
+                "createdDate": "2026-04-22 10:15:45.322",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2026-04-22 15:00:01.732",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": null,
+                "id": "a5d00ae4-4923-4283-8529-74e46f551823",
+                "classifierEventProblem1": "Бронирование",
+                "inputJson": {
+                    "id": "a5d00ae4-4923-4283-8529-74e46f551823",
+                    "name": "ВАТС №2 Штаб строительства (вип-вход) => Бытовой городок",
+                    "number": "21940",
+                    "comment": "Задача ВАТС №2 Штаб строительства (вип-вход) => Бытовой городок",
+                    "clientId": "16eb2927-052e-4f6c-92d6-a58d5bee8132",
+                    "executor": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
+                    "isDelete": null,
+                    "objectUk": {
+                        "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                        "name": "ВАТС №2",
+                        "frame": null,
+                        "number": null,
+                        "quarter": null,
+                        "isDelete": null,
+                        "isRented": true,
+                        "parentId": null,
+                        "unitType": null,
+                        "propertyId": null,
+                        "isRentedCar": true,
+                        "numberRooms": null,
+                        "nameCalendar": "ВАТС №2",
+                        "typeObjectUk": "ВАТС",
+                        "isTireService": null,
+                        "typeEquipment": null,
+                        "purposeEquipment": null
+                    },
+                    "createdBy": "Белашов Дмитрий Александрович",
+                    "deletedBy": null,
+                    "coExecutor": null,
+                    "dutyStatus": {
+                        "id": "7043d845-551f-42aa-8145-00e50bc967e7",
+                        "icon": null,
+                        "name": "С просрочкой",
+                        "color": "#EB5757",
+                        "isDelete": null,
+                        "createdBy": "AAntipov@sbercity.ru",
+                        "deletedBy": null,
+                        "createdDate": "2025-03-03 15:00:00.000",
+                        "deletedDate": null,
+                        "lastModifiedBy": "AAntipov@sbercity.ru",
+                        "backgroundColor": "#ffffff",
+                        "lastModifiedDate": "2025-03-03 15:00:00.000"
+                    },
+                    "statusTask": {
+                        "id": "ef1e31bd-35a5-4f84-90bc-776cb2f1f682",
+                        "name": "Новое",
+                        "isDelete": null,
+                        "createdBy": "user",
+                        "deletedBy": null,
+                        "createdDate": "2023-01-09 12:28:56.767",
+                        "deletedDate": null,
+                        "lastModifiedBy": "user",
+                        "lastModifiedDate": "2023-01-09 12:28:56.767"
+                    },
+                    "timeSlotId": null,
+                    "createdDate": "2026-04-22 10:15:45.322",
+                    "deletedDate": null,
+                    "description": "ВАТС №2 Штаб строительства (вип-вход) => Бытовой городок",
+                    "desiredDate": null,
+                    "priorityTask": {
+                        "id": "fefcb1ce-c0c9-48f9-b120-f5d6b678cbba",
+                        "icon": null,
+                        "name": "Обычная",
+                        "color": null,
+                        "isDelete": null,
+                        "createdBy": "user",
+                        "deletedBy": null,
+                        "createdDate": "2023-01-09 12:28:56.767",
+                        "deletedDate": null,
+                        "lastModifiedBy": "user",
+                        "backgroundColor": null,
+                        "lastModifiedDate": "2023-01-09 12:28:56.767"
+                    },
+                    "stopFactDate": null,
+                    "stopPlanDate": "2026-04-22 14:30:00.000",
+                    "startFactDate": null,
+                    "startPlanDate": "2026-04-22 14:00:00.000",
+                    "lastModifiedBy": "user",
+                    "planStopDateCal": null,
+                    "planStartDateCal": null,
+                    "classifierEventPriority": "8e9a6345-5ff3-44a4-8587-9a4dca964400",
+                    "classifierEventProblem1": "Бронирование"
+                }
+            },
+            "schedule": null,
+            "objectUk": {
+                "createdBy": "AAntipov@sbercity.ru",
+                "createdDate": "2025-04-29 12:00:00.000",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2026-04-21 15:38:35.667",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                "inputJson": {
+                    "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                    "name": "ВАТС №2",
+                    "frame": null,
+                    "number": null,
+                    "quarter": null,
+                    "isDelete": null,
+                    "isRented": true,
+                    "parentId": null,
+                    "unitType": null,
+                    "propertyId": null,
+                    "isRentedCar": true,
+                    "numberRooms": null,
+                    "nameCalendar": "ВАТС №2",
+                    "typeObjectUk": "ВАТС",
+                    "isTireService": null,
+                    "typeEquipment": null,
+                    "purposeEquipment": null
+                }
+            },
+            "client": "16eb2927-052e-4f6c-92d6-a58d5bee8132",
+            "clientIdName": "ОАО \"ДеревКО\"",
+            "clientPhone": "+79005556666",
+            "clientEmail": "derevko@mail.ru",
+            "clientType": "ЮЛ",
+            "statusEvent": {
+                "createdBy": "user",
+                "createdDate": "2024-03-22 13:50:00.000",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2024-03-22 13:50:00.000",
+                "deletedDate": null,
+                "deletedBy": "",
+                "isDelete": false,
+                "id": "b8ff7136-821a-46f1-8e79-68d82860b781",
+                "name": "Новое"
+            },
+            "responsibleId": null,
+            "responsibleIdName": null,
+            "responsibleIdEmail": null,
+            "responsiblePhone": null,
+            "meetingLink": null,
+            "statusSchedule": null,
+            "color": "#7D85C1",
+            "backgroundColor": "#ECEDF6",
+            "icon": null,
+            "outlookMessageId": null,
+            "dutyStatusEvent": null,
+            "notifyCompletion": null,
+            "follower": null,
+            "partyEmployeeDtos": [
+                {
+                    "createdBy": "Белашов Дмитрий Александрович",
+                    "createdDate": "2026-04-22 10:15:45.414",
+                    "lastModifiedBy": "Белашов Дмитрий Александрович",
+                    "lastModifiedDate": "2026-04-22 10:15:45.414",
+                    "deletedDate": null,
+                    "deletedBy": null,
+                    "isDelete": null,
+                    "id": "25774348-2999-4e2b-aa53-1c4f4320050c",
+                    "eventId": "f1417a39-6865-4822-aad1-bd1c64a1ed4c",
+                    "employee": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
+                    "employeeIdName": "Настройкин Меню Забиякович",
+                    "employeeIdEmail": "menu@mail.ru",
+                    "isMain": true,
+                    "partyStatus": null,
+                    "stopFactDate": null,
+                    "comment": null
+                }
+            ],
+            "followerDtos": [
+                
+            ],
+            "documents": [
+                
+            ]
+        },
+        {
+            "createdBy": "Черников Дмитрий Витальевич",
+            "createdDate": "2026-04-22 11:49:09.839",
+            "lastModifiedBy": "Черников Дмитрий Витальевич",
+            "lastModifiedDate": "2026-04-22 11:49:09.839",
+            "deletedDate": null,
+            "deletedBy": null,
+            "isDelete": false,
+            "id": "ffeda030-a51d-4681-8e49-0a993c2f6b55",
+            "name": "Задача по заявке",
+            "number": 53902,
+            "typeEvent": {
+                "createdBy": "user",
+                "createdDate": "2023-01-09 12:28:56.767",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2023-01-09 12:28:56.767",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "0472ebfe-de0f-4f8a-b93b-29038e9dee35",
+                "name": "Задача",
+                "color": "7D85C1",
+                "backgroundColor": null,
+                "icon": null
+            },
+            "kindEvent": null,
+            "priorityEvent": {
+                "createdBy": "user",
+                "createdDate": "2023-01-09 12:28:56.767",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2025-02-06 16:30:00.000",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "b105298a-b1de-4215-8d87-6e441825e9e0",
+                "name": "Обычная",
+                "color": "#7D85C1",
+                "backgroundColor": "#ECEDF6",
+                "icon": null
+            },
+            "startPlanDate": "2026-04-22 09:00:08.651",
+            "stopPlanDate": "2026-04-22 10:00:08.652",
+            "startFactDate": null,
+            "stopFactDate": null,
+            "comment": "ВАТС №2 Автотест",
+            "task": {
+                "createdBy": "Черников Дмитрий Витальевич",
+                "createdDate": "2026-04-22 11:49:09.696",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2026-04-22 12:00:01.354",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": null,
+                "id": "22901fac-dd15-4842-bef5-392035f3e9a4",
+                "classifierEventProblem1": "Бронирование",
+                "inputJson": {
+                    "id": "22901fac-dd15-4842-bef5-392035f3e9a4",
+                    "name": "ВАТС №2 Автотест",
+                    "number": "21945",
+                    "comment": "Задача ВАТС №2 Автотест",
+                    "clientId": "56fe8853-9836-4586-9a09-3dfbd8d71d09",
+                    "executor": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
+                    "isDelete": null,
+                    "objectUk": {
+                        "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                        "name": "ВАТС №2",
+                        "frame": null,
+                        "number": null,
+                        "quarter": null,
+                        "isDelete": null,
+                        "isRented": true,
+                        "parentId": null,
+                        "unitType": null,
+                        "propertyId": null,
+                        "isRentedCar": true,
+                        "numberRooms": null,
+                        "nameCalendar": "ВАТС №2",
+                        "typeObjectUk": "ВАТС",
+                        "isTireService": null,
+                        "typeEquipment": null,
+                        "purposeEquipment": null
+                    },
+                    "createdBy": "Черников Дмитрий Витальевич",
+                    "deletedBy": null,
+                    "coExecutor": null,
+                    "dutyStatus": {
+                        "id": "7043d845-551f-42aa-8145-00e50bc967e7",
+                        "icon": null,
+                        "name": "С просрочкой",
+                        "color": "#EB5757",
+                        "isDelete": null,
+                        "createdBy": "AAntipov@sbercity.ru",
+                        "deletedBy": null,
+                        "createdDate": "2025-03-03 15:00:00.000",
+                        "deletedDate": null,
+                        "lastModifiedBy": "AAntipov@sbercity.ru",
+                        "backgroundColor": "#ffffff",
+                        "lastModifiedDate": "2025-03-03 15:00:00.000"
+                    },
+                    "statusTask": {
+                        "id": "ef1e31bd-35a5-4f84-90bc-776cb2f1f682",
+                        "name": "Новое",
+                        "isDelete": null,
+                        "createdBy": "user",
+                        "deletedBy": null,
+                        "createdDate": "2023-01-09 12:28:56.767",
+                        "deletedDate": null,
+                        "lastModifiedBy": "user",
+                        "lastModifiedDate": "2023-01-09 12:28:56.767"
+                    },
+                    "timeSlotId": null,
+                    "createdDate": "2026-04-22 11:49:09.696",
+                    "deletedDate": null,
+                    "description": "ВАТС №2 Автотест",
+                    "desiredDate": null,
+                    "priorityTask": {
+                        "id": "fefcb1ce-c0c9-48f9-b120-f5d6b678cbba",
+                        "icon": null,
+                        "name": "Обычная",
+                        "color": null,
+                        "isDelete": null,
+                        "createdBy": "user",
+                        "deletedBy": null,
+                        "createdDate": "2023-01-09 12:28:56.767",
+                        "deletedDate": null,
+                        "lastModifiedBy": "user",
+                        "backgroundColor": null,
+                        "lastModifiedDate": "2023-01-09 12:28:56.767"
+                    },
+                    "stopFactDate": null,
+                    "stopPlanDate": "2026-04-22 10:00:08.652",
+                    "startFactDate": null,
+                    "startPlanDate": "2026-04-22 09:00:08.651",
+                    "lastModifiedBy": "user",
+                    "planStopDateCal": null,
+                    "planStartDateCal": null,
+                    "classifierEventPriority": "8e9a6345-5ff3-44a4-8587-9a4dca964400",
+                    "classifierEventProblem1": "Бронирование"
+                }
+            },
+            "schedule": null,
+            "objectUk": {
+                "createdBy": "AAntipov@sbercity.ru",
+                "createdDate": "2025-04-29 12:00:00.000",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2026-04-21 15:38:35.667",
+                "deletedDate": null,
+                "deletedBy": null,
+                "isDelete": false,
+                "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                "inputJson": {
+                    "id": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac",
+                    "name": "ВАТС №2",
+                    "frame": null,
+                    "number": null,
+                    "quarter": null,
+                    "isDelete": null,
+                    "isRented": true,
+                    "parentId": null,
+                    "unitType": null,
+                    "propertyId": null,
+                    "isRentedCar": true,
+                    "numberRooms": null,
+                    "nameCalendar": "ВАТС №2",
+                    "typeObjectUk": "ВАТС",
+                    "isTireService": null,
+                    "typeEquipment": null,
+                    "purposeEquipment": null
+                }
+            },
+            "client": "56fe8853-9836-4586-9a09-3dfbd8d71d09",
+            "clientIdName": "Черников Дмитрий Витальевич",
+            "clientPhone": "+79304136748",
+            "clientEmail": "DChernikov@sbercity.ru",
+            "clientType": "ФЛ",
+            "statusEvent": {
+                "createdBy": "user",
+                "createdDate": "2024-03-22 13:50:00.000",
+                "lastModifiedBy": "user",
+                "lastModifiedDate": "2024-03-22 13:50:00.000",
+                "deletedDate": null,
+                "deletedBy": "",
+                "isDelete": false,
+                "id": "b8ff7136-821a-46f1-8e79-68d82860b781",
+                "name": "Новое"
+            },
+            "responsibleId": null,
+            "responsibleIdName": null,
+            "responsibleIdEmail": null,
+            "responsiblePhone": null,
+            "meetingLink": null,
+            "statusSchedule": null,
+            "color": "#7D85C1",
+            "backgroundColor": "#ECEDF6",
+            "icon": null,
+            "outlookMessageId": null,
+            "dutyStatusEvent": null,
+            "notifyCompletion": null,
+            "follower": null,
+            "partyEmployeeDtos": [
+                {
+                    "createdBy": "Черников Дмитрий Витальевич",
+                    "createdDate": "2026-04-22 11:49:09.867",
+                    "lastModifiedBy": "Черников Дмитрий Витальевич",
+                    "lastModifiedDate": "2026-04-22 11:49:09.867",
+                    "deletedDate": null,
+                    "deletedBy": null,
+                    "isDelete": null,
+                    "id": "040e40c4-988a-482d-b151-c6253f19ba85",
+                    "eventId": "ffeda030-a51d-4681-8e49-0a993c2f6b55",
                     "employee": "37f31e72-9707-4c9b-8e2f-b5bffa6f2489",
                     "employeeIdName": "Настройкин Меню Забиякович",
                     "employeeIdEmail": "menu@mail.ru",
@@ -429,7 +881,7 @@ Content-Encoding: gzip
         "unpaged": false
     },
     "last": true,
-    "totalElements": 1,
+    "totalElements": 3,
     "totalPages": 1,
     "size": 20,
     "number": 0,
@@ -439,12 +891,93 @@ Content-Encoding: gzip
         "unsorted": true
     },
     "first": true,
-    "numberOfElements": 1,
+    "numberOfElements": 3,
     "empty": false
 }
 ]]></system-out>
   </testcase>
-  <testcase name="createReservationFord" classname="ReservationTest" time="3.406">
+  <testcase name="createReservationFord" classname="ReservationTest" time="2.327">
+    <failure message="expected: &lt;201&gt; but was: &lt;400&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <201> but was: <400>
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:527)
+	at ReservationTest.createReservationFord(ReservationTest.java:143)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.api.extension.InvocationInterceptor.interceptTestMethod(InvocationInterceptor.java:118)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
     <system-out><![CDATA[Request method:	POST
 Request URI:	http://172.20.207.16/api/client-relations/tasks-full/booking-rented-car-ford
 Proxy:			<none>
@@ -452,7 +985,7 @@ Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2ODc2ODEwLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiZDIxMzBhMDAtMWFjZi00YzhlLTg1MWQtNmQzZTdhOGQ3ZDNiIn0.NHBzDUceBsAru23Hv52ZQ3TIt-fsPJ_QKQStzAuLhEfbWOm7oVTtHKC8a8OGT4S7vlku73HsOEw3623buzP8uQ
+Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2OTcwMTcxLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiNmQ1YTgzNjUtMDAwNC00ZWI3LTk1NWEtZTY5M2U2ZTBjOWRjIn0.DoBw6NLVnPhf38WTV686SeI5AhP_LS7eqgmeO2srcSP1kXniPmfp-FxSNXt5FLPTu2zZ8HfZs8bSC8605rIUVg
 				Accept=*/*
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
@@ -460,49 +993,13 @@ Multiparts:		<none>
 Body:
 {
     "destination": "Автотест",
-    "startDate": "2026-04-21 20:00:38.593",
-    "endDate": "2026-04-21 21:00:38.593",
+    "startDate": "2026-04-22 22:00:38.621",
+    "endDate": "2026-04-22 23:00:38.621",
     "objectUkId": "b71a6e71-da3a-46e7-a86f-0e0f0f8ccf67"
-}
-HTTP/1.1 201 Created
-Server: nginx
-Date: Tue, 21 Apr 2026 16:53:41 GMT
-Content-Length: 0
-Connection: keep-alive
-X-Content-Type-Options: nosniff
-X-XSS-Protection: 0
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Pragma: no-cache
-Expires: 0
-X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block
-Access-Control-Expose-Headers: Content-Disposition
-Cache-Control: private, must-revalidate, max-age=0
-]]></system-out>
-  </testcase>
-  <testcase name="createReservationVats" classname="ReservationTest" time="2.294">
-    <system-out><![CDATA[Request method:	POST
-Request URI:	http://172.20.207.16/api/client-relations/tasks-full/booking-rented-car-hav
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2ODc2ODEwLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiZDIxMzBhMDAtMWFjZi00YzhlLTg1MWQtNmQzZTdhOGQ3ZDNiIn0.NHBzDUceBsAru23Hv52ZQ3TIt-fsPJ_QKQStzAuLhEfbWOm7oVTtHKC8a8OGT4S7vlku73HsOEw3623buzP8uQ
-				Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "destination": "Автотест",
-    "startDate": "2026-04-21 20:00:42.002",
-    "endDate": "2026-04-21 21:00:42.002",
-    "objectUkId": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac"
 }
 HTTP/1.1 400 Bad Request
 Server: nginx
-Date: Tue, 21 Apr 2026 16:53:43 GMT
+Date: Wed, 22 Apr 2026 18:49:40 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -523,11 +1020,54 @@ Cache-Control: private, must-revalidate, max-age=0
 }
 ]]></system-out>
   </testcase>
-  <testcase name="createUsualReservation" classname="ReservationTest" time="3.699">
+  <testcase name="createReservationVats" classname="ReservationTest" time="2.297">
+    <system-out><![CDATA[Request method:	POST
+Request URI:	http://172.20.207.16/api/client-relations/tasks-full/booking-rented-car-hav
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEQ2hlcm5pa292QHNiZXJjaXR5LnJ1IiwiZXhwIjoxNzc2OTcwMTcxLCJyb2xlcyI6eyJjcmVhdGVkQnkiOm51bGwsImNyZWF0ZWREYXRlIjpudWxsLCJsYXN0TW9kaWZpZWRCeSI6InVzZXIiLCJsYXN0TW9kaWZpZWREYXRlIjoxNjk4MjM2NDUwMDA5LCJkZWxldGVkRGF0ZSI6bnVsbCwiZGVsZXRlZEJ5IjpudWxsLCJpc0RlbGV0ZSI6bnVsbCwiaWQiOiJjY2VkNDU4NS1lMzU4LTQwYmYtODYxNC0wMWIwYmQzOTQzOWIiLCJuYW1lIjoi0JDQtNC80LjQvdC40YHRgtGA0LDRgtC-0YAiLCJncm91cEFjY2Vzc2VzIjpbeyJpZCI6IjE0MGEwMjEwLWQxZDEtNDM5ZS1iM2E0LTBlZTViZTZkMjlkMiIsIm5hbWUiOiLQkNC00LzQuNC90LjRgdGC0YDQsNGC0L7RgCAtINC_0L7Qu9C90YvQuSDQtNC-0YHRgtGD0L8ifV19LCJmaXJzdE5hbWUiOiLQp9C10YDQvdC40LrQvtCyINCU0LzQuNGC0YDQuNC5INCS0LjRgtCw0LvRjNC10LLQuNGHIiwiaWQiOiIwMWJiNjZjYy02NDU2LTQxY2UtOWZiNy1hZDM4YzI1ZmVhNDMiLCJlbXBsb3llZUlkIjoiYjY5ZjBhZjAtNDNiZC00YTM3LWIzYzEtZjY4YzEyM2ZkZTBjIiwiaXNDb250cmFjdG9yIjpmYWxzZSwic2Vzc2lvbklkIjoiNmQ1YTgzNjUtMDAwNC00ZWI3LTk1NWEtZTY5M2U2ZTBjOWRjIn0.DoBw6NLVnPhf38WTV686SeI5AhP_LS7eqgmeO2srcSP1kXniPmfp-FxSNXt5FLPTu2zZ8HfZs8bSC8605rIUVg
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "destination": "Автотест",
+    "startDate": "2026-04-22 22:00:40.950",
+    "endDate": "2026-04-22 23:00:40.950",
+    "objectUkId": "f239537b-c3bf-4ded-8b10-ef1dc8ff55ac"
+}
+HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Wed, 22 Apr 2026 18:49:43 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Access-Control-Expose-Headers: Content-Disposition
+Cache-Control: private, must-revalidate, max-age=0
+
+{
+    "type": "CommonException",
+    "message": "Not available cars for booking at this time",
+    "messages": null,
+    "detail": null
+}
+]]></system-out>
+  </testcase>
+  <testcase name="createUsualReservation" classname="ReservationTest" time="2.52">
     <system-out><![CDATA[
 ]]></system-out>
   </testcase>
-  <testcase name="getRentedCarsObjectUk" classname="ReservationTest" time="0.093">
+  <testcase name="getRentedCarsObjectUk" classname="ReservationTest" time="0.105">
     <system-out><![CDATA[{
     "events": {
         
@@ -661,11 +1201,11 @@ Cache-Control: private, must-revalidate, max-age=0
 }
 ]]></system-out>
   </testcase>
-  <testcase name="bookingRentedCarByObject" classname="ReservationTest" time="3.893">
+  <testcase name="bookingRentedCarByObject" classname="ReservationTest" time="2.564">
     <system-out><![CDATA[
 ]]></system-out>
   </testcase>
-  <testcase name="getReservation" classname="ReservationTest" time="2.452">
+  <testcase name="getReservation" classname="ReservationTest" time="2.44">
     <system-out><![CDATA[{
     "content": [
         

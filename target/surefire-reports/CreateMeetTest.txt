@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: CreateMeetTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.08 s -- in CreateMeetTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.24 s -- in CreateMeetTest

@@ -10,9 +10,12 @@ public class UserGroupApplicationTest {
 
     private static String accessToken;
     private static String createdUuid;
+    private static String createdMemberUuid;
+    private static String employeeUuid;
 
     private static final String BASE_URL = "http://172.20.207.16:9000";
     private static final String ENDPOINT = "/client-relations/user-group-application";
+    private static final String MEMBER_ENDPOINT = "/client-relations/member-group-application";
 
     @BeforeAll
     static void setUp() {
@@ -58,7 +61,6 @@ public class UserGroupApplicationTest {
                 .extract()
                 .response();
 
-        // Сохраняем UUID для следующих тестов
         createdUuid = response.jsonPath().getString("id");
     }
 
@@ -194,11 +196,156 @@ public class UserGroupApplicationTest {
     }
 
     // =====================================================================
-    // 8. DELETE /{uuid} — Удаление группы
+    // БЛОК 2: Участники группы (MemberGroupApplication)
     // =====================================================================
 
-     @Test
+    // 8. GET autocomplete/employee — Получаем первого доступного сотрудника
+    // =====================================================================
+
+    @Test
     @Order(8)
+    @DisplayName("MEMBER | GET /autocomplete/employee | 200 — Получение первого сотрудника для добавления в группу")
+    void getFirstEmployee() {
+        Response response = authRequest()
+                .when()
+                .get("/client-relations/autocomplete/employee?page=0&size=1")
+                .then()
+                .statusCode(200)
+                .body("content", notNullValue())
+                .body("content.size()", greaterThan(0))
+                .extract()
+                .response();
+
+        employeeUuid = response.jsonPath().getString("content[0].id");
+    }
+
+    // =====================================================================
+    // 9. POST — Добавление участника в группу
+    // =====================================================================
+
+    @Test
+    @Order(9)
+    @DisplayName("MEMBER | POST | 200 — Добавление участника в группу")
+    void createMemberGroupApplication() {
+        String body = """
+                {
+                  "userGroupApplication": {
+                    "id": "%s"
+                  },
+                  "employeeId": {
+                    "id": "%s"
+                  }
+                }
+                """.formatted(createdUuid, employeeUuid);
+
+        Response response = authRequest()
+                .body(body)
+                .when()
+                .post(MEMBER_ENDPOINT)
+                .then()
+                .statusCode(200)
+                .body("id", notNullValue())
+                .body("employee", equalTo(employeeUuid))
+                .body("userGroupApplication.id", equalTo(createdUuid))
+                .extract()
+                .response();
+
+        createdMemberUuid = response.jsonPath().getString("id");
+    }
+
+    // =====================================================================
+    // 10. GET list — Добавленный участник присутствует в общем списке
+    // =====================================================================
+
+    @Test
+    @Order(10)
+    @DisplayName("MEMBER | GET list | 200 — Добавленный участник присутствует в общем списке")
+    void getMemberListContainsCreatedMember() {
+        authRequest()
+                .when()
+                .get(MEMBER_ENDPOINT + "?page=0&size=200")
+                .then()
+                .statusCode(200)
+                .body("content", notNullValue())
+                .body("content.id", hasItem(createdMemberUuid))
+                .body("content.employee", hasItem(employeeUuid));
+    }
+
+    // =====================================================================
+    // 11. GET /by-group — Участник виден в списке участников группы
+    // =====================================================================
+
+    @Test
+    @Order(11)
+    @DisplayName("MEMBER | GET /by-group | 200 — Участник виден в списке участников группы")
+    void getMembersByGroup() {
+        authRequest()
+                .queryParam("groupId", createdUuid)
+                .when()
+                .get(MEMBER_ENDPOINT + "/by-group")
+                .then()
+                .statusCode(200)
+                .body("content", notNullValue())
+                .body("content.id", hasItem(createdMemberUuid))
+                .body("content.employee", hasItem(employeeUuid));
+    }
+
+
+
+    // =====================================================================
+    // 13. GET /{uuid} — Получение участника по UUID
+    // =====================================================================
+
+    @Test
+    @Order(13)
+    @DisplayName("MEMBER | GET /{uuid} | 200 — Получение участника по UUID")
+    void getMemberGroupApplicationById() {
+        authRequest()
+                .when()
+                .get(MEMBER_ENDPOINT + "/" + createdMemberUuid)
+                .then()
+                .statusCode(200)
+                .body("id", equalTo(createdMemberUuid))
+                .body("employee", equalTo(employeeUuid))
+                .body("userGroupApplication.id", equalTo(createdUuid));
+    }
+
+    // =====================================================================
+    // 14. DELETE /{uuid} — Удаление участника из группы
+    // =====================================================================
+
+    @Test
+    @Order(14)
+    @DisplayName("MEMBER | DELETE /{uuid} | 201 — Удаление участника из группы")
+    void deleteMemberGroupApplication() {
+        authRequest()
+                .when()
+                .delete(MEMBER_ENDPOINT + "/" + createdMemberUuid)
+                .then()
+                .statusCode(201);
+    }
+
+    // =====================================================================
+    // 15. GET /{uuid} — Проверка что участник удалён
+    // =====================================================================
+
+    @Test
+    @Order(15)
+    @DisplayName("MEMBER | GET /{uuid} | 500 — Удалённый участник не найден")
+    void verifyDeletedMemberGroupApplication() {
+        authRequest()
+                .when()
+                .get(MEMBER_ENDPOINT + "/" + createdMemberUuid)
+                .then()
+                .statusCode(500);
+    }
+
+    // =====================================================================
+    // БЛОК 3: Удаление группы
+    // =====================================================================
+
+    @Test
+    @Order(16)
     @DisplayName("DELETE /{uuid} | 201 — Удаление группы")
     void deleteUserGroupApplication() {
         authRequest()
@@ -208,12 +355,8 @@ public class UserGroupApplicationTest {
                 .statusCode(201);
     }
 
-    // =====================================================================
-    // 9. GET /{uuid} — Проверка что группа удалена
-    // =====================================================================
-
-   @Test
-    @Order(9)
+    @Test
+    @Order(17)
     @DisplayName("GET /{uuid} | 500 — Удалённая группа не найдена")
     void verifyDeletedUserGroupApplication() {
         authRequest()
