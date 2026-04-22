@@ -206,7 +206,7 @@ public class CalendarTest {
     @DisplayName("Получение списка календаря")
     public void getFilterForCalendar() {
         authRequest()
-                .body(new File(JSON_PATH + "GetFiltersCalendar.json"))
+                .body(TestDataJson.getFilterCalendar())
                 .post("/api/calendar/event/filtering-event-map")
                 .then()
                 .statusCode(200);
@@ -217,22 +217,19 @@ public class CalendarTest {
     @DisplayName("Получение списка графика дежурств")
     public void getFilterDutySchedule() {
         authRequest()
-                .body(new File(JSON_PATH + "dutySchedule.json"))
+                .body(TestDataJson.dutySchedule())
                 .post("/api/calendar/event/filtering-event-map")
                 .then()
                 .statusCode(200);
     }
 
-    // ─────────────────────────────────────────────
-    // График дежурств (Schedule)
-    // ─────────────────────────────────────────────
 
     @Test
     @Description("create schedule")
     @DisplayName("Создание графика дежурств")
     public void createSchedule() {
         authRequest()
-                .body(new File(JSON_PATH + "createSchedule.json"))
+                .body(TestDataJson.createSchedule())
                 .post("/api/calendar/event/generate-schedule")
                 .then()
                 .statusCode(200);
@@ -243,7 +240,7 @@ public class CalendarTest {
     @DisplayName("Удаление графика дежурств")
     public void deleteSchedule() {
         authRequest()
-                .body(new File(JSON_PATH + "deleteSchedule.json"))
+                .body(TestDataJson.deleteSchedule())
                 .post("/api/calendar/event/delete-schedule")
                 .then()
                 .statusCode(201);
@@ -258,9 +255,9 @@ public class CalendarTest {
     @DisplayName("Создание встречи")
     public void createSimpleEvent() {
         // ШАГ 1 — создаём событие
-        String body = TestDataJson.CreateEvent;
+
         Response responseCreateEvent = authRequest()
-                .body(body)
+                .body(TestDataJson.createEventCalendar())
                 .post("/api/calendar/event")
                 .andReturn();
 

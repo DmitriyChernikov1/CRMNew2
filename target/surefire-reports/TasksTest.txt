@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TasksTest
 -------------------------------------------------------------------------------
-Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 37.49 s -- in TasksTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 71.63 s -- in TasksTest
